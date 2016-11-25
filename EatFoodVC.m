@@ -98,7 +98,9 @@
     UIStoryboard *secondStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     PersonMessageVC* pm = [secondStoryBoard instantiateViewControllerWithIdentifier:@"personmessagevc"];  //personmessagevc为viewcontroller的StoryboardId
 
+    self.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:pm animated:YES];
+    self.hidesBottomBarWhenPushed=NO;
 }
 
 @end

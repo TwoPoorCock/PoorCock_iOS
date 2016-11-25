@@ -22,10 +22,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.navigationItem.title = @"小鳄口味";
     
 }
+
 - (IBAction)saveAll:(id)sender {
 }
 

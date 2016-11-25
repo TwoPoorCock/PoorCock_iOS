@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     int i=0;
+//    UIImage* ui = [UIImage imageNamed:@"SmallE_Close_small"];
     for(UIViewController* vc in self.viewControllers){
         if(i==0){
             vc.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"小鳄菜单" image:NULL tag:0];
