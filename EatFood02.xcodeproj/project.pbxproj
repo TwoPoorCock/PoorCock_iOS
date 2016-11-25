@@ -13,6 +13,10 @@
 		41AD980B1DE7105600781975 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41AD98091DE7105600781975 /* Main.storyboard */; };
 		41AD980D1DE7105600781975 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41AD980C1DE7105600781975 /* Assets.xcassets */; };
 		41AD98101DE7105600781975 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41AD980E1DE7105600781975 /* LaunchScreen.storyboard */; };
+		41AD981C1DE7176B00781975 /* EatMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AD981B1DE7176B00781975 /* EatMenuVC.m */; };
+		41AD98271DE726DD00781975 /* EatNewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AD98261DE726DD00781975 /* EatNewsVC.m */; };
+		41AD982B1DE74ADD00781975 /* EatFoodVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AD982A1DE74ADD00781975 /* EatFoodVC.m */; };
+		41AD98301DE74CF500781975 /* PersonMessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AD982F1DE74CF500781975 /* PersonMessageVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,14 @@
 		41AD980C1DE7105600781975 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41AD980F1DE7105600781975 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41AD98111DE7105600781975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41AD981A1DE7176B00781975 /* EatMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EatMenuVC.h; path = EatFood02/EatMenuVC.h; sourceTree = "<group>"; };
+		41AD981B1DE7176B00781975 /* EatMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EatMenuVC.m; path = EatFood02/EatMenuVC.m; sourceTree = "<group>"; };
+		41AD98251DE726DD00781975 /* EatNewsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EatNewsVC.h; sourceTree = "<group>"; };
+		41AD98261DE726DD00781975 /* EatNewsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EatNewsVC.m; sourceTree = "<group>"; };
+		41AD98291DE74ADD00781975 /* EatFoodVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EatFoodVC.h; sourceTree = "<group>"; };
+		41AD982A1DE74ADD00781975 /* EatFoodVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EatFoodVC.m; sourceTree = "<group>"; };
+		41AD982E1DE74CF500781975 /* PersonMessageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonMessageVC.h; sourceTree = "<group>"; };
+		41AD982F1DE74CF500781975 /* PersonMessageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonMessageVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +70,10 @@
 		41AD97FF1DE7105600781975 /* EatFood02 */ = {
 			isa = PBXGroup;
 			children = (
-				41AD98031DE7105600781975 /* AppDelegate.h */,
-				41AD98041DE7105600781975 /* AppDelegate.m */,
-				41AD98061DE7105600781975 /* ViewController.h */,
-				41AD98071DE7105600781975 /* ViewController.m */,
+				41AD982C1DE74B4C00781975 /* Main */,
+				41AD98281DE74AAF00781975 /* EatFood */,
+				41AD98211DE725E700781975 /* EatNews */,
+				41AD98201DE725BD00781975 /* EatMenu */,
 				41AD98091DE7105600781975 /* Main.storyboard */,
 				41AD980C1DE7105600781975 /* Assets.xcassets */,
 				41AD980E1DE7105600781975 /* LaunchScreen.storyboard */,
@@ -77,6 +89,49 @@
 				41AD98011DE7105600781975 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		41AD98201DE725BD00781975 /* EatMenu */ = {
+			isa = PBXGroup;
+			children = (
+				41AD981A1DE7176B00781975 /* EatMenuVC.h */,
+				41AD981B1DE7176B00781975 /* EatMenuVC.m */,
+			);
+			name = EatMenu;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		41AD98211DE725E700781975 /* EatNews */ = {
+			isa = PBXGroup;
+			children = (
+				41AD98251DE726DD00781975 /* EatNewsVC.h */,
+				41AD98261DE726DD00781975 /* EatNewsVC.m */,
+			);
+			name = EatNews;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		41AD98281DE74AAF00781975 /* EatFood */ = {
+			isa = PBXGroup;
+			children = (
+				41AD98291DE74ADD00781975 /* EatFoodVC.h */,
+				41AD982A1DE74ADD00781975 /* EatFoodVC.m */,
+				41AD982E1DE74CF500781975 /* PersonMessageVC.h */,
+				41AD982F1DE74CF500781975 /* PersonMessageVC.m */,
+			);
+			name = EatFood;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		41AD982C1DE74B4C00781975 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				41AD98031DE7105600781975 /* AppDelegate.h */,
+				41AD98041DE7105600781975 /* AppDelegate.m */,
+				41AD98061DE7105600781975 /* ViewController.h */,
+				41AD98071DE7105600781975 /* ViewController.m */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,7 +207,11 @@
 			files = (
 				41AD98081DE7105600781975 /* ViewController.m in Sources */,
 				41AD98051DE7105600781975 /* AppDelegate.m in Sources */,
+				41AD981C1DE7176B00781975 /* EatMenuVC.m in Sources */,
+				41AD98301DE74CF500781975 /* PersonMessageVC.m in Sources */,
+				41AD98271DE726DD00781975 /* EatNewsVC.m in Sources */,
 				41AD98021DE7105600781975 /* main.m in Sources */,
+				41AD982B1DE74ADD00781975 /* EatFoodVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +332,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EatFood02/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.poorcick.EatFood02;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -284,6 +344,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EatFood02/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.poorcick.EatFood02;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -309,6 +370,7 @@
 				41AD98161DE7105600781975 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

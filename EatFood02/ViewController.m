@@ -16,6 +16,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    int i=0;
+    for(UIViewController* vc in self.viewControllers){
+        if(i==0){
+            vc.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"小鳄菜单" image:NULL tag:0];
+        }
+        if(i==1){
+            vc.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"小鳄吃饭" image:NULL tag:1];
+        }
+        if(i==2){
+            vc.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"小鳄食讯" image:NULL tag:2];
+        }
+        i++;
+    }
     // Do any additional setup after loading the view, typically from a nib.
 }
 

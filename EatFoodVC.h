@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  EatFoodVC.h
 //  EatFood02
 //
-//  Created by 郝宇泽 on 2016/11/24.
+//  Created by 郝宇泽 on 2016/11/25.
 //  Copyright © 2016年 twopoorcick. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UITabBarController
-
+@interface EatFoodVC : UITableViewController
 
 @end
-
