@@ -17,16 +17,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     int i=0;
-//    UIImage* ui = [UIImage imageNamed:@"SmallE_Close_small"];
+    UIImage* ui = [[UIImage imageNamed:@"E_small_close"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage* ui_select = [[UIImage imageNamed:@"E_small_open"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     for(UIViewController* vc in self.viewControllers){
         if(i==0){
-            vc.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"小鳄菜单" image:NULL tag:0];
+            vc.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"小鳄菜单" image:ui selectedImage:ui_select];
         }
         if(i==1){
-            vc.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"小鳄吃饭" image:NULL tag:1];
+            vc.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"小鳄吃饭" image:ui selectedImage:ui_select];
         }
         if(i==2){
-            vc.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"小鳄食讯" image:NULL tag:2];
+            vc.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"小鳄食讯" image:ui selectedImage:ui_select];
         }
         i++;
     }

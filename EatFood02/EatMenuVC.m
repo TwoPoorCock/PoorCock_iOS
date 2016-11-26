@@ -7,6 +7,7 @@
 //
 
 #import "EatMenuVC.h"
+#import "EatMenuCell.h"
 
 @interface EatMenuVC ()
 
@@ -18,11 +19,6 @@
     [super viewDidLoad];
     self.navigationItem.title = @"小鳄菜单";
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,24 +29,41 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return 3;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+
+    NSString *cellIdentifier = @"MenuCell";
+    EatMenuCell *cell = (EatMenuCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        UINib *nib=[UINib nibWithNibName:@"EatMenuCell" bundle:nil];
+        [tableView registerNib:nib forCellReuseIdentifier:cellIdentifier];
+        cell = (EatMenuCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    }
+
+    if(indexPath.section==0)//第一个分区
+    {
+        if(indexPath.row==0)
+        {
+            [cell addbackground:[UIImage imageNamed:@"内蒙古财经大学"] andname:@"内蒙古财经大学食堂菜单"];
+        }
+        if(indexPath.row==1)
+        {
+            [cell addbackground:[UIImage imageNamed:@"menu_background01"] andname:@"小鳄喜爱的菜单"];
+        }
+        if(indexPath.row==2)
+        {
+            [cell addbackground:[UIImage imageNamed:@"menu_background02"] andname:@"小鳄的历史菜单"];
+        }
+    }
+
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

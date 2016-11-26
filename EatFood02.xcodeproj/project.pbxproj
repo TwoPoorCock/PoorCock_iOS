@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4199D1671DE8670500DD2775 /* EatMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4199D1651DE8670500DD2775 /* EatMenuCell.m */; };
+		4199D1681DE8670500DD2775 /* EatMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4199D1661DE8670500DD2775 /* EatMenuCell.xib */; };
 		41AD98021DE7105600781975 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AD98011DE7105600781975 /* main.m */; };
 		41AD98051DE7105600781975 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AD98041DE7105600781975 /* AppDelegate.m */; };
 		41AD98081DE7105600781975 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AD98071DE7105600781975 /* ViewController.m */; };
@@ -20,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4199D1641DE8670500DD2775 /* EatMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EatMenuCell.h; sourceTree = "<group>"; };
+		4199D1651DE8670500DD2775 /* EatMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EatMenuCell.m; sourceTree = "<group>"; };
+		4199D1661DE8670500DD2775 /* EatMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EatMenuCell.xib; sourceTree = "<group>"; };
 		41AD97FD1DE7105600781975 /* EatFood02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatFood02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AD98011DE7105600781975 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		41AD98031DE7105600781975 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -96,6 +101,9 @@
 			children = (
 				41AD981A1DE7176B00781975 /* EatMenuVC.h */,
 				41AD981B1DE7176B00781975 /* EatMenuVC.m */,
+				4199D1641DE8670500DD2775 /* EatMenuCell.h */,
+				4199D1651DE8670500DD2775 /* EatMenuCell.m */,
+				4199D1661DE8670500DD2775 /* EatMenuCell.xib */,
 			);
 			name = EatMenu;
 			path = ..;
@@ -195,6 +203,7 @@
 				41AD98101DE7105600781975 /* LaunchScreen.storyboard in Resources */,
 				41AD980D1DE7105600781975 /* Assets.xcassets in Resources */,
 				41AD980B1DE7105600781975 /* Main.storyboard in Resources */,
+				4199D1681DE8670500DD2775 /* EatMenuCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +221,7 @@
 				41AD98271DE726DD00781975 /* EatNewsVC.m in Sources */,
 				41AD98021DE7105600781975 /* main.m in Sources */,
 				41AD982B1DE74ADD00781975 /* EatFoodVC.m in Sources */,
+				4199D1671DE8670500DD2775 /* EatMenuCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
