@@ -17,9 +17,27 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self.window makeKeyAndVisible];
+    
+    _splashView = [[NSBundle mainBundle ]loadNibNamed:@"LaunchScreenView" owner:nil options:nil][0];
+    _splashView.frame = CGRectMake(0, 0, self.window.screen.bounds.size.width, self.window.screen.bounds.size.height);
+    [self.window addSubview:_splashView];
+    [self.window bringSubviewToFront:_splashView];
+    
+//    欢迎页
+    [self performSelector:@selector(scale_5) withObject:nil afterDelay:0.0f];
+    [self performSelector:@selector(showWord) withObject:nil afterDelay:1.0f];
+    
+    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(removeLun) userInfo:nil repeats:NO];
+    
     return YES;
 }
 
+-(void)removeLun
+{
+    [_splashView removeFromSuperview];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -47,5 +65,56 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+-(void)scale_5
+{
+    UIImage* ui = [UIImage imageNamed:@"透明E"];
+    UIImageView *heart_1 = [[UIImageView alloc]initWithFrame:CGRectMake((self.window.screen.bounds.size.width-150)/2,100,150,150)];
+    heart_1.image = ui;
+    [_splashView addSubview:heart_1];
+    [self setAnimation:heart_1];
+}
 
+-(void)setAnimation:(UIImageView *)nowView
+{
+    
+    [UIView animateWithDuration:0.6f delay:0.0f options:UIViewAnimationOptionCurveLinear
+                     animations:^
+     {
+         // 执行的动画code
+         [nowView setFrame:CGRectMake(nowView.frame.origin.x- nowView.frame.size.width*0.1, nowView.frame.origin.y-nowView.frame.size.height*0.1, nowView.frame.size.width*1.2, nowView.frame.size.height*1.2)];
+     }
+                     completion:^(BOOL finished)
+     {
+         // 完成后执行code
+//         [nowView removeFromSuperview];
+     }
+     ];
+    
+    
+}
+
+-(void)showWord
+{
+    
+//    UIImageView *word_ = [[UIImageView alloc]initWithFrame:CGRectMake((self.window.screen.bounds.size.width-150)/2, self.window.screen.bounds.size.height-50, 100, 50)];
+//    word_.image = [UIImage imageNamed:@"person"];
+    UILabel *word_ =[[UILabel alloc]initWithFrame:CGRectMake((self.window.screen.bounds.size.width-300)/2, self.window.screen.bounds.size.height-50, 300, 25)];
+    word_.text = @"www.twopoorcick.eatfood.com";
+    word_.textAlignment = NSTextAlignmentCenter;
+    [_splashView addSubview:word_];
+    
+    word_.alpha = 0.0;
+    [UIView animateWithDuration:1.0f delay:0.0f options:UIViewAnimationOptionCurveLinear
+                     animations:^
+     {
+         word_.alpha = 1.0;
+     }
+                     completion:^(BOOL finished)
+     {
+         // 完成后执行code
+         [NSThread sleepForTimeInterval:1.0f];
+//         [_splashView removeFromSuperview];
+     }
+     ];
+}
 @end
