@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4106241B1DED5526008B59E4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4106241A1DED5526008B59E4 /* Login.storyboard */; };
+		4106241E1DED6701008B59E4 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4106241D1DED6701008B59E4 /* LoginVC.m */; };
+		410624211DED6747008B59E4 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 410624201DED6747008B59E4 /* RegisterVC.m */; };
 		413299671DEC5A02003FFB65 /* LaunchScreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 413299661DEC5A02003FFB65 /* LaunchScreenView.xib */; };
 		4132996D1DEC6654003FFB65 /* PersonMessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4132996C1DEC6654003FFB65 /* PersonMessageVC.m */; };
 		4132996F1DEC6664003FFB65 /* EatFoodVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4132996E1DEC6664003FFB65 /* EatFoodVC.m */; };
@@ -24,6 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4106241A1DED5526008B59E4 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		4106241C1DED6701008B59E4 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		4106241D1DED6701008B59E4 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		4106241F1DED6747008B59E4 /* RegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterVC.h; sourceTree = "<group>"; };
+		410624201DED6747008B59E4 /* RegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterVC.m; sourceTree = "<group>"; };
 		413299661DEC5A02003FFB65 /* LaunchScreenView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreenView.xib; sourceTree = "<group>"; };
 		413299681DEC65BD003FFB65 /* EatFoodVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EatFoodVC.h; path = EatFood02/EatFoodVC.h; sourceTree = "<group>"; };
 		4132996B1DEC6654003FFB65 /* PersonMessageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonMessageVC.h; path = EatFood02/PersonMessageVC.h; sourceTree = "<group>"; };
@@ -61,6 +69,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		410624191DED54B1008B59E4 /* LoginAndRegister */ = {
+			isa = PBXGroup;
+			children = (
+				4106241A1DED5526008B59E4 /* Login.storyboard */,
+				4106241C1DED6701008B59E4 /* LoginVC.h */,
+				4106241D1DED6701008B59E4 /* LoginVC.m */,
+				4106241F1DED6747008B59E4 /* RegisterVC.h */,
+				410624201DED6747008B59E4 /* RegisterVC.m */,
+			);
+			name = LoginAndRegister;
+			sourceTree = "<group>";
+		};
 		41AD97F41DE7105600781975 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +100,7 @@
 		41AD97FF1DE7105600781975 /* EatFood02 */ = {
 			isa = PBXGroup;
 			children = (
+				410624191DED54B1008B59E4 /* LoginAndRegister */,
 				41F72D861DEAE55000968836 /* EatAnimotion */,
 				41AD982C1DE74B4C00781975 /* Main */,
 				41AD98281DE74AAF00781975 /* EatFood */,
@@ -218,6 +239,7 @@
 			files = (
 				413299671DEC5A02003FFB65 /* LaunchScreenView.xib in Resources */,
 				413299741DEC668D003FFB65 /* EatMenuCell.xib in Resources */,
+				4106241B1DED5526008B59E4 /* Login.storyboard in Resources */,
 				41AD98101DE7105600781975 /* LaunchScreen.storyboard in Resources */,
 				41AD980D1DE7105600781975 /* Assets.xcassets in Resources */,
 				41AD980B1DE7105600781975 /* Main.storyboard in Resources */,
@@ -233,6 +255,8 @@
 			files = (
 				4132996F1DEC6664003FFB65 /* EatFoodVC.m in Sources */,
 				41AD98081DE7105600781975 /* ViewController.m in Sources */,
+				4106241E1DED6701008B59E4 /* LoginVC.m in Sources */,
+				410624211DED6747008B59E4 /* RegisterVC.m in Sources */,
 				41AD98051DE7105600781975 /* AppDelegate.m in Sources */,
 				41E9F18E1DEAEF1D0003C5CB /* JTNumberScrollAnimatedView.m in Sources */,
 				41AD981C1DE7176B00781975 /* EatMenuVC.m in Sources */,
