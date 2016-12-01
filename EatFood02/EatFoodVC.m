@@ -44,7 +44,7 @@
     self.hidesBottomBarWhenPushed=NO;
 }
 - (IBAction)select_cai:(id)sender {
-    [self.animotionView setValue:@"鱼香肉丝"];
+    [self.animotionView setValue:@"过油肉土豆片"];
     [self.animotionView startAnimation];
 }
 

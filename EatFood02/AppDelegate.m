@@ -24,6 +24,7 @@
     _splashView.frame = CGRectMake(0, 0, self.window.screen.bounds.size.width, self.window.screen.bounds.size.height);
     [self.window addSubview:_splashView];
     [self.window bringSubviewToFront:_splashView];
+//    _splashView.backgroundColor = [UIColor colorWithRed:239 green:215 blue:0 alpha:1];
     
 //    欢迎页
     [self performSelector:@selector(scale_5) withObject:nil afterDelay:0.0f];
