@@ -24,6 +24,10 @@
     [super viewDidLoad];
     self.navigationItem.title = @"小鳄口味";
     
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    NSString* user = [defaults objectForKey:@"user_name"];//根据键值取出name
+    NSLog(@"%@",user);
+    self.per_name.text=user;
 }
 
 - (IBAction)saveAll:(id)sender {
@@ -33,6 +37,16 @@
     if(indexPath.row==0){
         [self AlearChangeName];
     }
+}
+- (IBAction)exitLogin:(id)sender {
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    [defaults setObject:nil forKey:@"user_name"];
+    
+    UIStoryboard *secondStoryBoard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+    UINavigationController* pm = [secondStoryBoard instantiateViewControllerWithIdentifier:@"loginroot"];
+    
+    
+    [self.navigationController presentViewController:pm animated:YES completion:nil];
 }
 
 - (void)AlearChangeName

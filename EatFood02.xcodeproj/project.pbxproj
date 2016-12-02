@@ -16,6 +16,7 @@
 		413299731DEC668D003FFB65 /* EatMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 413299711DEC668D003FFB65 /* EatMenuCell.m */; };
 		413299741DEC668D003FFB65 /* EatMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 413299721DEC668D003FFB65 /* EatMenuCell.xib */; };
 		413299771DEC66AD003FFB65 /* EatNewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 413299761DEC66AD003FFB65 /* EatNewsVC.m */; };
+		415CA6741DF159D200E8B7F9 /* HttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 415CA6731DF159D200E8B7F9 /* HttpTool.m */; };
 		41AD98021DE7105600781975 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AD98011DE7105600781975 /* main.m */; };
 		41AD98051DE7105600781975 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AD98041DE7105600781975 /* AppDelegate.m */; };
 		41AD98081DE7105600781975 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AD98071DE7105600781975 /* ViewController.m */; };
@@ -43,6 +44,8 @@
 		413299721DEC668D003FFB65 /* EatMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EatMenuCell.xib; path = EatFood02/EatMenuCell.xib; sourceTree = "<group>"; };
 		413299751DEC66AD003FFB65 /* EatNewsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EatNewsVC.h; path = EatFood02/EatNewsVC.h; sourceTree = "<group>"; };
 		413299761DEC66AD003FFB65 /* EatNewsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EatNewsVC.m; path = EatFood02/EatNewsVC.m; sourceTree = "<group>"; };
+		415CA6721DF159D200E8B7F9 /* HttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpTool.h; sourceTree = "<group>"; };
+		415CA6731DF159D200E8B7F9 /* HttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTool.m; sourceTree = "<group>"; };
 		41AD97FD1DE7105600781975 /* EatFood02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatFood02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AD98011DE7105600781975 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		41AD98031DE7105600781975 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -86,6 +89,15 @@
 			name = LoginAndRegister;
 			sourceTree = "<group>";
 		};
+		415CA6711DF159A500E8B7F9 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				415CA6721DF159D200E8B7F9 /* HttpTool.h */,
+				415CA6731DF159D200E8B7F9 /* HttpTool.m */,
+			);
+			name = HTTP;
+			sourceTree = "<group>";
+		};
 		41AD97F41DE7105600781975 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +119,7 @@
 		41AD97FF1DE7105600781975 /* EatFood02 */ = {
 			isa = PBXGroup;
 			children = (
+				415CA6711DF159A500E8B7F9 /* HTTP */,
 				410624191DED54B1008B59E4 /* LoginAndRegister */,
 				41F72D861DEAE55000968836 /* EatAnimotion */,
 				41AD982C1DE74B4C00781975 /* Main */,
@@ -339,6 +352,7 @@
 				4132996D1DEC6654003FFB65 /* PersonMessageVC.m in Sources */,
 				413299771DEC66AD003FFB65 /* EatNewsVC.m in Sources */,
 				413299731DEC668D003FFB65 /* EatMenuCell.m in Sources */,
+				415CA6741DF159D200E8B7F9 /* HttpTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

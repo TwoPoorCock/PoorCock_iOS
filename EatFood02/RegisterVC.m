@@ -7,8 +7,10 @@
 //
 
 #import "RegisterVC.h"
+#import "HttpTool.h"
 
 @interface RegisterVC ()
+@property (weak, nonatomic) IBOutlet UITextField *register_name;
 
 @end
 
@@ -22,6 +24,16 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)register:(id)sender {
+    NSString* url = @"http://10.51.0.166:8080/eatfood/register?username=1233";
+    //创建一个可变字典
+    NSMutableDictionary *parametersDic = [NSMutableDictionary dictionary];
+    //往字典里面添加需要提交的参数
+    [parametersDic setObject:self.register_name.text forKey:@"username"];
+    
+    HttpTool* ht = [[HttpTool alloc] init];
+    [ht postHttpurl:url anddictionary:parametersDic];
 }
 
 /*

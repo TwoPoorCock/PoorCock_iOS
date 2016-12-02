@@ -8,6 +8,7 @@
 
 #import "LoginVC.h"
 #import "ViewController.h"
+#import "HttpTool.h"
 
 @interface LoginVC ()
 
@@ -25,6 +26,12 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)Login:(id)sender {
+//    NSString str = ""
+//    HttpTool* ht = [[HttpTool alloc] init];
+//    [ht postHttpurl:@"" anddictionary:<#(NSMutableDictionary *)#>
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    [defaults setObject:@"haoyuze" forKey:@"user_name"];
+    
     UIStoryboard *MainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ViewController* viewcontroller = [MainStoryBoard instantiateViewControllerWithIdentifier:@"viewcontroller"];  //personmessagevc为viewcontroller的StoryboardId
     

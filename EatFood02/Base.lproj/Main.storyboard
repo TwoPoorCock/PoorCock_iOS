@@ -448,6 +448,40 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="Fl7-iV-147">
+                                        <rect key="frame" x="0.0" y="330" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fl7-iV-147" id="BBb-lw-zX0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t8F-DN-4Le">
+                                                    <rect key="frame" x="8" y="7.5" width="359" height="33"/>
+                                                    <color key="backgroundColor" red="1" green="0.1834084689617157" blue="0.32611647248268127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal">
+                                                        <attributedString key="attributedTitle">
+                                                            <fragment content="退  出  登  录">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="1" green="0.70969635248184204" blue="0.26966872811317444" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="18" name="YuppySC-Regular"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="exitLogin:" destination="qV6-je-Yi6" eventType="touchUpInside" id="q1u-6M-hni"/>
+                                                        <action selector="saveAll:" destination="qV6-je-Yi6" eventType="touchUpInside" id="S18-lX-eiz"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="t8F-DN-4Le" secondAttribute="trailing" id="6W5-Ni-SAD"/>
+                                                <constraint firstItem="t8F-DN-4Le" firstAttribute="centerY" secondItem="BBb-lw-zX0" secondAttribute="centerY" id="VcZ-mC-In9"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="t8F-DN-4Le" secondAttribute="leading" id="WKT-8V-t4R"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
