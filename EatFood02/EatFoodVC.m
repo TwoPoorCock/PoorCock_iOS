@@ -12,7 +12,7 @@
 
 @interface EatFoodVC ()
 @property (weak, nonatomic) IBOutlet JTNumberScrollAnimatedView *animotionView;
-
+@property (strong, nonatomic) NSString* islogin;
 @end
 
 @implementation EatFoodVC
@@ -20,14 +20,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"小鳄吃饭";
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"person"] style:UIBarButtonItemStyleDone target:self action:@selector(personMessage)];
-
-    self.navigationItem.rightBarButtonItem = rightButton;
     
     self.animotionView.textColor = [UIColor whiteColor];
     self.animotionView.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:42];
     
     self.animotionView.minLength = 3;
+    
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    self.islogin = [defaults objectForKey:@"Letmeseesee"];//根据键值取出name
+    
+    if([self.islogin isEqual:@"no"]){
+        
+    }else{
+        UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"person"] style:UIBarButtonItemStyleDone target:self action:@selector(personMessage)];
+        
+        self.navigationItem.rightBarButtonItem = rightButton;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

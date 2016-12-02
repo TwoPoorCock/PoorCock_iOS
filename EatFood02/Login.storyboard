@@ -156,6 +156,9 @@
                                     <constraint firstAttribute="width" constant="31" id="R4E-hL-CgA"/>
                                 </constraints>
                                 <state key="normal" title="试用"/>
+                                <connections>
+                                    <action selector="let_me_seesee:" destination="7WG-R4-oND" eventType="touchUpInside" id="7g0-ev-L3t"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95668035745620728" green="0.83889740705490112" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

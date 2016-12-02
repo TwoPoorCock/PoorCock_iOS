@@ -11,6 +11,8 @@
 
 @interface EatMenuVC ()
 
+@property (strong, nonatomic) NSString* islogin;
+
 @end
 
 @implementation EatMenuVC
@@ -18,6 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"小鳄菜单";
+    
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    self.islogin = [defaults objectForKey:@"Letmeseesee"];//根据键值取出name
     
 }
 
@@ -33,7 +38,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    if([self.islogin isEqual:@"no"]){
+        return 2;
+    }
+    else{
+        return 3;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -18,12 +18,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"小鳄吃饭";
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)let_me_seesee:(id)sender {
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    [defaults setObject:@"no" forKey:@"Letmeseesee"];
+    
+    UIStoryboard *MainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ViewController* viewcontroller = [MainStoryBoard instantiateViewControllerWithIdentifier:@"viewcontroller"];
+    [self.navigationController presentViewController:viewcontroller animated:YES completion:nil];
 }
 - (IBAction)Login:(id)sender {
 //    NSString str = ""
@@ -37,6 +47,9 @@
     
 //    [self.navigationController pushViewController:viewcontroller animated:YES];
     [self.navigationController presentViewController:viewcontroller animated:YES completion:nil];
+    
+    NSUserDefaults *defaults1 =[NSUserDefaults standardUserDefaults];
+    [defaults1 setObject:@"yes" forKey:@"Letmeseesee"];
 
 }
 
