@@ -14,7 +14,23 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="小鳄吃饭" translatesAutoresizingMaskIntoConstraints="NO" id="9JU-rJ-sNj">
+                    <rect key="frame" x="38" y="50" width="300" height="123"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="123" id="EZL-jV-AUD"/>
+                        <constraint firstAttribute="width" constant="300" id="tRE-9w-xqC"/>
+                    </constraints>
+                </imageView>
+            </subviews>
             <color key="backgroundColor" red="0.95589011907577515" green="0.83794045448303223" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="9JU-rJ-sNj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0kn-Xv-HPU"/>
+                <constraint firstItem="9JU-rJ-sNj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="Eu4-XV-uyK"/>
+            </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="小鳄吃饭" width="300" height="123"/>
+    </resources>
 </document>

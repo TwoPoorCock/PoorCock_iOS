@@ -30,7 +30,7 @@
     [self performSelector:@selector(scale_5) withObject:nil afterDelay:0.0f];
     [self performSelector:@selector(showWord) withObject:nil afterDelay:1.0f];
     
-    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(removeLun) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:3.5 target:self selector:@selector(removeLun) userInfo:nil repeats:NO];
     
     return YES;
 }
@@ -65,11 +65,19 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+-(void)scale_4
+{
+    UIImage* ui = [UIImage imageNamed:@"小鳄吃饭"];
+    UIImageView *heart_1 = [[UIImageView alloc]initWithFrame:CGRectMake((self.window.screen.bounds.size.width-300)/2,50,300,123)];
+    heart_1.image = ui;
+    [_splashView addSubview:heart_1];
+    [self setAnimation:heart_1];
+}
 
 -(void)scale_5
 {
     UIImage* ui = [UIImage imageNamed:@"透明E"];
-    UIImageView *heart_1 = [[UIImageView alloc]initWithFrame:CGRectMake((self.window.screen.bounds.size.width-150)/2,100,150,150)];
+    UIImageView *heart_1 = [[UIImageView alloc]initWithFrame:CGRectMake((self.window.screen.bounds.size.width-150)/2,150,150,150)];
     heart_1.image = ui;
     [_splashView addSubview:heart_1];
     [self setAnimation:heart_1];

@@ -128,6 +128,7 @@
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FJ4-U1-HOC">
                                 <rect key="frame" x="26" y="332" width="266" height="30"/>
+                                <color key="backgroundColor" red="0.5722077488899231" green="1" blue="0.38890942931175232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="FkU-Uf-q88"/>
                                 </constraints>

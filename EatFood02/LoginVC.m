@@ -38,19 +38,16 @@
 - (IBAction)Login:(id)sender {
 //    NSString str = ""
 //    HttpTool* ht = [[HttpTool alloc] init];
-//    [ht postHttpurl:@"" anddictionary:<#(NSMutableDictionary *)#>
+//    [ht postHttpurl:@"" anddictionary:(NSMutableDictionary *)
     NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
     [defaults setObject:@"haoyuze" forKey:@"user_name"];
-    
+    [defaults setObject:@"yes" forKey:@"Letmeseesee"];
     UIStoryboard *MainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ViewController* viewcontroller = [MainStoryBoard instantiateViewControllerWithIdentifier:@"viewcontroller"];  //personmessagevc为viewcontroller的StoryboardId
+    ViewController* viewcontroller = [MainStoryBoard instantiateViewControllerWithIdentifier:@"viewcontroller"];
     
 //    [self.navigationController pushViewController:viewcontroller animated:YES];
     [self.navigationController presentViewController:viewcontroller animated:YES completion:nil];
     
-    NSUserDefaults *defaults1 =[NSUserDefaults standardUserDefaults];
-    [defaults1 setObject:@"yes" forKey:@"Letmeseesee"];
-
 }
 
 /*
