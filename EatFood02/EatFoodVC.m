@@ -52,7 +52,10 @@
     self.hidesBottomBarWhenPushed=NO;
 }
 - (IBAction)select_cai:(id)sender {
-    [self.animotionView setValue:@"过油肉土豆片"];
+    NSArray* array4 = @[@"贝克汉堡",@"炸酱面",@"米克牛肉",@"3"];
+    int value = (arc4random() % 3);
+    [array4 objectAtIndex:value];
+    [self.animotionView setValue:[array4 objectAtIndex:value]];
     [self.animotionView startAnimation];
 }
 

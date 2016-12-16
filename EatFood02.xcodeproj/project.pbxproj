@@ -250,7 +250,8 @@
 				TargetAttributes = {
 					41AD97FC1DE7105600781975 = {
 						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = US5WY2EYFJ;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -418,7 +419,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -460,7 +461,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -473,11 +474,14 @@
 			baseConfigurationReference = 5A1FEF4ABE3B5F430F5AC0E4 /* Pods-EatFood02.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = US5WY2EYFJ;
 				INFOPLIST_FILE = EatFood02/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.poorcick.EatFood02;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2f2eee2d-4aa1-41f2-b2c4-0bf1eb93a5d5";
+				PROVISIONING_PROFILE_SPECIFIER = haoyuze_eatfood_development;
 			};
 			name = Debug;
 		};
@@ -486,11 +490,15 @@
 			baseConfigurationReference = 694DA1FB9F4C4B03F53E4052 /* Pods-EatFood02.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = US5WY2EYFJ;
 				INFOPLIST_FILE = EatFood02/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.poorcick.EatFood02;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "96cded68-6399-461f-8516-63a1385f2b82";
+				PROVISIONING_PROFILE_SPECIFIER = haoyuze_eatfood_distribution;
 			};
 			name = Release;
 		};
