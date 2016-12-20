@@ -55,8 +55,18 @@
 }
 
 - (void) addCai{
-    MenuAddCaiVC* addCai = [[MenuAddCaiVC alloc] init];
+    //修改下一个界面的返回键
+    UIBarButtonItem *returnButtonItem = [[UIBarButtonItem alloc] init];
+    returnButtonItem.title = @"返回";
+    self.navigationItem.backBarButtonItem = returnButtonItem;
+    
+    UIStoryboard *secondStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    MenuAddCaiVC* addCai = [secondStoryBoard instantiateViewControllerWithIdentifier:@"menuaddcaivc"];
+    
+    //隐藏底部工具栏
+    self.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:addCai animated:YES];
+    self.hidesBottomBarWhenPushed=NO;
 }
 /*
 // Override to support conditional editing of the table view.

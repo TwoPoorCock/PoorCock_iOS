@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MenuAddCaiVC : UIViewController
+@interface MenuAddCaiVC : UITableViewController
 
 @end

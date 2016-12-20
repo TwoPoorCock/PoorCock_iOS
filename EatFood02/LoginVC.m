@@ -20,7 +20,6 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"小鳄吃饭";
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,16 +35,15 @@
     [self.navigationController presentViewController:viewcontroller animated:YES completion:nil];
 }
 - (IBAction)Login:(id)sender {
-//    NSString str = ""
-//    HttpTool* ht = [[HttpTool alloc] init];
-//    [ht postHttpurl:@"" anddictionary:(NSMutableDictionary *)
+    //储存用户登录信息
     NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
     [defaults setObject:@"haoyuze" forKey:@"user_name"];
+    //不是游客模式
     [defaults setObject:@"yes" forKey:@"Letmeseesee"];
+    //获取主界面
     UIStoryboard *MainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ViewController* viewcontroller = [MainStoryBoard instantiateViewControllerWithIdentifier:@"viewcontroller"];
-    
-//    [self.navigationController pushViewController:viewcontroller animated:YES];
+    //模态界面推出
     [self.navigationController presentViewController:viewcontroller animated:YES completion:nil];
     
 }
