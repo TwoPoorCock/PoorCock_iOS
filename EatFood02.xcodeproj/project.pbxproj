@@ -10,6 +10,10 @@
 		4106241B1DED5526008B59E4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4106241A1DED5526008B59E4 /* Login.storyboard */; };
 		4106241E1DED6701008B59E4 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4106241D1DED6701008B59E4 /* LoginVC.m */; };
 		410624211DED6747008B59E4 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 410624201DED6747008B59E4 /* RegisterVC.m */; };
+		410DA27F1E08CF9200D246D5 /* MenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 410DA27D1E08CF9200D246D5 /* MenuVC.m */; };
+		410DA2801E08CF9200D246D5 /* MenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410DA27E1E08CF9200D246D5 /* MenuVC.xib */; };
+		410DA2841E08E21C00D246D5 /* MenuAddCaiVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 410DA2821E08E21C00D246D5 /* MenuAddCaiVC.m */; };
+		410DA2851E08E21C00D246D5 /* MenuAddCaiVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410DA2831E08E21C00D246D5 /* MenuAddCaiVC.xib */; };
 		413299671DEC5A02003FFB65 /* LaunchScreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 413299661DEC5A02003FFB65 /* LaunchScreenView.xib */; };
 		4132996D1DEC6654003FFB65 /* PersonMessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4132996C1DEC6654003FFB65 /* PersonMessageVC.m */; };
 		4132996F1DEC6664003FFB65 /* EatFoodVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4132996E1DEC6664003FFB65 /* EatFoodVC.m */; };
@@ -34,6 +38,12 @@
 		4106241D1DED6701008B59E4 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		4106241F1DED6747008B59E4 /* RegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterVC.h; sourceTree = "<group>"; };
 		410624201DED6747008B59E4 /* RegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterVC.m; sourceTree = "<group>"; };
+		410DA27C1E08CF9200D246D5 /* MenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuVC.h; sourceTree = "<group>"; };
+		410DA27D1E08CF9200D246D5 /* MenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuVC.m; sourceTree = "<group>"; };
+		410DA27E1E08CF9200D246D5 /* MenuVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuVC.xib; sourceTree = "<group>"; };
+		410DA2811E08E21C00D246D5 /* MenuAddCaiVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuAddCaiVC.h; sourceTree = "<group>"; };
+		410DA2821E08E21C00D246D5 /* MenuAddCaiVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuAddCaiVC.m; sourceTree = "<group>"; };
+		410DA2831E08E21C00D246D5 /* MenuAddCaiVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuAddCaiVC.xib; sourceTree = "<group>"; };
 		413299661DEC5A02003FFB65 /* LaunchScreenView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreenView.xib; sourceTree = "<group>"; };
 		413299681DEC65BD003FFB65 /* EatFoodVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EatFoodVC.h; path = EatFood02/EatFoodVC.h; sourceTree = "<group>"; };
 		4132996B1DEC6654003FFB65 /* PersonMessageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonMessageVC.h; path = EatFood02/PersonMessageVC.h; sourceTree = "<group>"; };
@@ -151,6 +161,12 @@
 				413299701DEC668D003FFB65 /* EatMenuCell.h */,
 				413299711DEC668D003FFB65 /* EatMenuCell.m */,
 				413299721DEC668D003FFB65 /* EatMenuCell.xib */,
+				410DA27C1E08CF9200D246D5 /* MenuVC.h */,
+				410DA27D1E08CF9200D246D5 /* MenuVC.m */,
+				410DA27E1E08CF9200D246D5 /* MenuVC.xib */,
+				410DA2811E08E21C00D246D5 /* MenuAddCaiVC.h */,
+				410DA2821E08E21C00D246D5 /* MenuAddCaiVC.m */,
+				410DA2831E08E21C00D246D5 /* MenuAddCaiVC.xib */,
 			);
 			name = EatMenu;
 			path = ..;
@@ -280,8 +296,10 @@
 			files = (
 				413299671DEC5A02003FFB65 /* LaunchScreenView.xib in Resources */,
 				413299741DEC668D003FFB65 /* EatMenuCell.xib in Resources */,
+				410DA2801E08CF9200D246D5 /* MenuVC.xib in Resources */,
 				4106241B1DED5526008B59E4 /* Login.storyboard in Resources */,
 				41AD98101DE7105600781975 /* LaunchScreen.storyboard in Resources */,
+				410DA2851E08E21C00D246D5 /* MenuAddCaiVC.xib in Resources */,
 				41AD980D1DE7105600781975 /* Assets.xcassets in Resources */,
 				41AD980B1DE7105600781975 /* Main.storyboard in Resources */,
 			);
@@ -352,6 +370,8 @@
 				41AD98021DE7105600781975 /* main.m in Sources */,
 				4132996D1DEC6654003FFB65 /* PersonMessageVC.m in Sources */,
 				413299771DEC66AD003FFB65 /* EatNewsVC.m in Sources */,
+				410DA27F1E08CF9200D246D5 /* MenuVC.m in Sources */,
+				410DA2841E08E21C00D246D5 /* MenuAddCaiVC.m in Sources */,
 				413299731DEC668D003FFB65 /* EatMenuCell.m in Sources */,
 				415CA6741DF159D200E8B7F9 /* HttpTool.m in Sources */,
 			);

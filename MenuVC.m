@@ -1,30 +1,28 @@
 //
-//  EatMenuVC.m
+//  MenuVC.m
 //  EatFood02
 //
-//  Created by 郝宇泽 on 2016/11/24.
+//  Created by 郝宇泽 on 2016/12/20.
 //  Copyright © 2016年 twopoorcick. All rights reserved.
 //
 
-#import "EatMenuVC.h"
-#import "EatMenuCell.h"
 #import "MenuVC.h"
+#import "MenuAddCaiVC.h"
 
-@interface EatMenuVC ()
-
-@property (strong, nonatomic) NSString* islogin;
+@interface MenuVC ()
 
 @end
 
-@implementation EatMenuVC
+@implementation MenuVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"小鳄菜单";
     
-    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
-    self.islogin = [defaults objectForKey:@"Letmeseesee"];//根据键值取出name
+    self.navigationItem.title = @"喜欢的菜单";
     
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCai)];
+    
+    self.navigationItem.rightBarButtonItem = rightButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,61 +37,26 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if([self.islogin isEqual:@"no"]){
-        return 2;
-    }
-    else{
-        return 3;
-    }
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    NSString *cellIdentifier = @"MenuCell";
-    EatMenuCell *cell = (EatMenuCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    NSString *cellIdentifier = @"CaiCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
     if (cell == nil) {
-        UINib *nib=[UINib nibWithNibName:@"EatMenuCell" bundle:nil];
-        [tableView registerNib:nib forCellReuseIdentifier:cellIdentifier];
-        cell = (EatMenuCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        cell =[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell.imageView.image = [UIImage imageNamed:@"透明E"];
+        cell.textLabel.text = @"textLabel";
     }
-
-    if(indexPath.section==0)//第一个分区
-    {
-        if(indexPath.row==0)
-        {
-            [cell addbackground:[UIImage imageNamed:@"内蒙古财经大学"] andname:@"内蒙古财经大学食堂菜单"];
-        }
-        if(indexPath.row==1)
-        {
-            [cell addbackground:[UIImage imageNamed:@"menu_background01"] andname:@"小鳄喜爱的菜单"];
-        }
-        if(indexPath.row==2)
-        {
-            [cell addbackground:[UIImage imageNamed:@"menu_background02"] andname:@"小鳄的历史菜单"];
-        }
-    }
-
+    
     return cell;
 }
 
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    MenuVC* menuVC = [[MenuVC alloc] init];
-    
-    if(indexPath.section==0)//第一个分区
-    {
-        if(indexPath.row==0)
-        {
-        }
-        if(indexPath.row==1)
-        {
-            menuVC.menuType = 1;
-            [self.navigationController pushViewController:menuVC animated:YES];
-        }
-        if(indexPath.row==2)
-        {
-        }
-    }
+- (void) addCai{
+    MenuAddCaiVC* addCai = [[MenuAddCaiVC alloc] init];
+    [self.navigationController pushViewController:addCai animated:YES];
 }
 /*
 // Override to support conditional editing of the table view.
@@ -126,6 +89,22 @@
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the item to be re-orderable.
     return YES;
+}
+*/
+
+/*
+#pragma mark - Table view delegate
+
+// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Navigation logic may go here, for example:
+    // Create the next view controller.
+    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
+    
+    // Pass the selected object to the new view controller.
+    
+    // Push the view controller.
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 */
 
