@@ -19,6 +19,7 @@
 		413299741DEC668D003FFB65 /* EatMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 413299721DEC668D003FFB65 /* EatMenuCell.xib */; };
 		413299771DEC66AD003FFB65 /* EatNewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 413299761DEC66AD003FFB65 /* EatNewsVC.m */; };
 		415CA6741DF159D200E8B7F9 /* HttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 415CA6731DF159D200E8B7F9 /* HttpTool.m */; };
+		4171E7F31E0A7917007D65EC /* PersonLove.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4171E7F21E0A7917007D65EC /* PersonLove.plist */; };
 		419D8E6C1E08EF860014B199 /* MenuAddCaiVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 419D8E6A1E08EF860014B199 /* MenuAddCaiVC.m */; };
 		41AD98021DE7105600781975 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AD98011DE7105600781975 /* main.m */; };
 		41AD98051DE7105600781975 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AD98041DE7105600781975 /* AppDelegate.m */; };
@@ -52,6 +53,7 @@
 		413299761DEC66AD003FFB65 /* EatNewsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EatNewsVC.m; path = EatFood02/EatNewsVC.m; sourceTree = "<group>"; };
 		415CA6721DF159D200E8B7F9 /* HttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpTool.h; sourceTree = "<group>"; };
 		415CA6731DF159D200E8B7F9 /* HttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTool.m; sourceTree = "<group>"; };
+		4171E7F21E0A7917007D65EC /* PersonLove.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PersonLove.plist; sourceTree = "<group>"; };
 		419D8E691E08EF860014B199 /* MenuAddCaiVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuAddCaiVC.h; sourceTree = "<group>"; };
 		419D8E6A1E08EF860014B199 /* MenuAddCaiVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuAddCaiVC.m; sourceTree = "<group>"; };
 		41AD97FD1DE7105600781975 /* EatFood02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatFood02.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				41AD98011DE7105600781975 /* main.m */,
+				4171E7F21E0A7917007D65EC /* PersonLove.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				41AD98101DE7105600781975 /* LaunchScreen.storyboard in Resources */,
 				41AD980D1DE7105600781975 /* Assets.xcassets in Resources */,
 				41AD980B1DE7105600781975 /* Main.storyboard in Resources */,
+				4171E7F31E0A7917007D65EC /* PersonLove.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

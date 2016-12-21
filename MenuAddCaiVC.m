@@ -9,7 +9,11 @@
 #import "MenuAddCaiVC.h"
 
 @interface MenuAddCaiVC ()
+@property (weak, nonatomic) IBOutlet UITextField *caiName;
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *caiHot;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *caiMeat;
 @end
 
 @implementation MenuAddCaiVC
@@ -18,6 +22,9 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"添加菜品";
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(saveCai)];
+    
+    self.navigationItem.rightBarButtonItem = rightButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,6 +32,30 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) saveCai {
+    //plist文件解档
+    NSString *path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+    NSString *filePath = [path stringByAppendingPathComponent:@"PersonLove.plist"];
+    NSArray *arr = [NSArray arrayWithContentsOfFile:filePath];
+    if(arr==nil){
+        arr = [[NSArray alloc] init];
+    }
+    NSMutableArray *myMutableArray = [arr mutableCopy];
+    
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
+                          _caiName.text, @"cainame",
+                          [NSString stringWithFormat: @"%d", _caiHot.selectedSegmentIndex], @"caihot",
+                          [NSString stringWithFormat: @"%d", _caiMeat.selectedSegmentIndex], @"caimeat",
+                          nil];
+    [myMutableArray addObject:dic];
+    NSLog(@"%@", myMutableArray);
+    NSArray *myArray = [myMutableArray copy];
+    
+    //plist文件归档
+    [myArray writeToFile:filePath atomically:YES];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 //#pragma mark - Table view data source
 //
 //- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

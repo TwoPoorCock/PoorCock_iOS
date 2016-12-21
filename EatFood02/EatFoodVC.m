@@ -53,7 +53,7 @@
 }
 - (IBAction)select_cai:(id)sender {
     NSArray* array4 = @[@"贝克汉堡",@"炸酱面",@"米克牛肉",@"3"];
-    int value = (arc4random() % 3);
+    int value = (arc4random() % 4);
     [array4 objectAtIndex:value];
     [self.animotionView setValue:[array4 objectAtIndex:value]];
     [self.animotionView startAnimation];

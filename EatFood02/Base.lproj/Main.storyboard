@@ -183,6 +183,11 @@
                             <outlet property="delegate" destination="crn-Mr-elR" id="NGU-Wu-awI"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="caiHot" destination="sZA-4z-Pla" id="FPl-ch-p4L"/>
+                        <outlet property="caiMeat" destination="wDf-Go-GHC" id="HJt-vs-e4K"/>
+                        <outlet property="caiName" destination="Sue-wp-NyQ" id="zPZ-yU-bEd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZnO-Ij-Vhc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

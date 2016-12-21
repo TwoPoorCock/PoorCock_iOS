@@ -11,6 +11,10 @@
 
 @interface MenuVC ()
 
+@property NSString *path;
+@property NSString *filePath;
+@property NSArray *arr;
+
 @end
 
 @implementation MenuVC
@@ -23,6 +27,15 @@
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCai)];
     
     self.navigationItem.rightBarButtonItem = rightButton;
+    
+}
+
+- (void) viewWillAppear:(BOOL)animated{
+    NSLog(@"woshiyigexiaobaobao");
+    //plist文件解档
+    self.path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+    self.filePath = [self.path stringByAppendingPathComponent:@"PersonLove.plist"];
+    self.arr = [NSArray arrayWithContentsOfFile:self.filePath];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,7 +50,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return [self.arr count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -48,7 +61,7 @@
     if (cell == nil) {
         cell =[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.imageView.image = [UIImage imageNamed:@"透明E"];
-        cell.textLabel.text = @"textLabel";
+        cell.textLabel.text = [self.arr[indexPath.row] objectForKey:@"cainame"];
     }
     
     return cell;
