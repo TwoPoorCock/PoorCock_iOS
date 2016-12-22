@@ -11,9 +11,9 @@
 
 @interface MenuVC ()
 
-@property NSString *path;
-@property NSString *filePath;
-@property NSArray *arr;
+@property (strong, nonatomic) NSString *path;
+@property (strong, nonatomic) NSString *filePath;
+@property (strong, nonatomic) NSArray *arr;
 
 @end
 

@@ -13,6 +13,11 @@
 @interface EatFoodVC ()
 @property (weak, nonatomic) IBOutlet JTNumberScrollAnimatedView *animotionView;
 @property (strong, nonatomic) NSString* islogin;
+
+//plist文件解档归档
+@property (strong, nonatomic) NSString *path;
+@property (strong, nonatomic) NSString *filePath;
+@property (strong, nonatomic) NSArray *arr;
 @end
 
 @implementation EatFoodVC
@@ -23,8 +28,8 @@
     
     self.animotionView.textColor = [UIColor whiteColor];
     self.animotionView.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:42];
-    
-    self.animotionView.minLength = 3;
+    //动画最少几个字
+    self.animotionView.minLength = 1;
     
     NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
     self.islogin = [defaults objectForKey:@"Letmeseesee"];//根据键值取出name
@@ -36,6 +41,11 @@
         
         self.navigationItem.rightBarButtonItem = rightButton;
     }
+    
+    //plist文件解档
+    self.path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+    self.filePath = [self.path stringByAppendingPathComponent:@"PersonLove.plist"];
+    self.arr = [NSArray arrayWithContentsOfFile:self.filePath];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,10 +62,8 @@
     self.hidesBottomBarWhenPushed=NO;
 }
 - (IBAction)select_cai:(id)sender {
-    NSArray* array4 = @[@"贝克汉堡",@"炸酱面",@"米克牛肉",@"3"];
-    int value = (arc4random() % 4);
-    [array4 objectAtIndex:value];
-    [self.animotionView setValue:[array4 objectAtIndex:value]];
+    int value = (arc4random() % [_arr count]);
+    [self.animotionView setValue:[self.arr[value] objectForKey:@"cainame"]];
     [self.animotionView startAnimation];
 }
 
