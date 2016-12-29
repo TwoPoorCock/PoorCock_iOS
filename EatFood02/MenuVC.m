@@ -8,6 +8,7 @@
 
 #import "MenuVC.h"
 #import "MenuAddCaiVC.h"
+#import "MJRefresh.h"
 
 @interface MenuVC ()
 
@@ -25,17 +26,17 @@
     self.navigationItem.title = @"喜欢的菜单";
     
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCai)];
-    
     self.navigationItem.rightBarButtonItem = rightButton;
     
 }
 
 - (void) viewWillAppear:(BOOL)animated{
-    NSLog(@"woshiyigexiaobaobao");
     //plist文件解档
     self.path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
     self.filePath = [self.path stringByAppendingPathComponent:@"PersonLove.plist"];
     self.arr = [NSArray arrayWithContentsOfFile:self.filePath];
+    
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,7 +56,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSLog(@"woshiyigexiaobaobao1");
     NSString *cellIdentifier = @"CaiCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
