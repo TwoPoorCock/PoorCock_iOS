@@ -10,17 +10,17 @@
 		4106241B1DED5526008B59E4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4106241A1DED5526008B59E4 /* Login.storyboard */; };
 		4106241E1DED6701008B59E4 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4106241D1DED6701008B59E4 /* LoginVC.m */; };
 		410624211DED6747008B59E4 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 410624201DED6747008B59E4 /* RegisterVC.m */; };
-		410DA27F1E08CF9200D246D5 /* MenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 410DA27D1E08CF9200D246D5 /* MenuVC.m */; };
-		410DA2801E08CF9200D246D5 /* MenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 410DA27E1E08CF9200D246D5 /* MenuVC.xib */; };
 		413299671DEC5A02003FFB65 /* LaunchScreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 413299661DEC5A02003FFB65 /* LaunchScreenView.xib */; };
 		4132996D1DEC6654003FFB65 /* PersonMessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4132996C1DEC6654003FFB65 /* PersonMessageVC.m */; };
 		4132996F1DEC6664003FFB65 /* EatFoodVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4132996E1DEC6664003FFB65 /* EatFoodVC.m */; };
 		413299731DEC668D003FFB65 /* EatMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 413299711DEC668D003FFB65 /* EatMenuCell.m */; };
 		413299741DEC668D003FFB65 /* EatMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 413299721DEC668D003FFB65 /* EatMenuCell.xib */; };
 		413299771DEC66AD003FFB65 /* EatNewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 413299761DEC66AD003FFB65 /* EatNewsVC.m */; };
+		41560B411E154B4C005C503F /* MenuAddCaiVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 41560B3D1E154B4C005C503F /* MenuAddCaiVC.m */; };
+		41560B421E154B4C005C503F /* MenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 41560B3F1E154B4C005C503F /* MenuVC.m */; };
+		41560B431E154B4C005C503F /* MenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41560B401E154B4C005C503F /* MenuVC.xib */; };
 		415CA6741DF159D200E8B7F9 /* HttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 415CA6731DF159D200E8B7F9 /* HttpTool.m */; };
 		4171E7F31E0A7917007D65EC /* PersonLove.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4171E7F21E0A7917007D65EC /* PersonLove.plist */; };
-		419D8E6C1E08EF860014B199 /* MenuAddCaiVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 419D8E6A1E08EF860014B199 /* MenuAddCaiVC.m */; };
 		41AD98021DE7105600781975 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AD98011DE7105600781975 /* main.m */; };
 		41AD98051DE7105600781975 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AD98041DE7105600781975 /* AppDelegate.m */; };
 		41AD98081DE7105600781975 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AD98071DE7105600781975 /* ViewController.m */; };
@@ -38,9 +38,6 @@
 		4106241D1DED6701008B59E4 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		4106241F1DED6747008B59E4 /* RegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterVC.h; sourceTree = "<group>"; };
 		410624201DED6747008B59E4 /* RegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterVC.m; sourceTree = "<group>"; };
-		410DA27C1E08CF9200D246D5 /* MenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuVC.h; sourceTree = "<group>"; };
-		410DA27D1E08CF9200D246D5 /* MenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuVC.m; sourceTree = "<group>"; };
-		410DA27E1E08CF9200D246D5 /* MenuVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuVC.xib; sourceTree = "<group>"; };
 		413299661DEC5A02003FFB65 /* LaunchScreenView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreenView.xib; sourceTree = "<group>"; };
 		413299681DEC65BD003FFB65 /* EatFoodVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EatFoodVC.h; path = EatFood02/EatFoodVC.h; sourceTree = "<group>"; };
 		4132996B1DEC6654003FFB65 /* PersonMessageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonMessageVC.h; path = EatFood02/PersonMessageVC.h; sourceTree = "<group>"; };
@@ -51,11 +48,14 @@
 		413299721DEC668D003FFB65 /* EatMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EatMenuCell.xib; path = EatFood02/EatMenuCell.xib; sourceTree = "<group>"; };
 		413299751DEC66AD003FFB65 /* EatNewsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EatNewsVC.h; path = EatFood02/EatNewsVC.h; sourceTree = "<group>"; };
 		413299761DEC66AD003FFB65 /* EatNewsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EatNewsVC.m; path = EatFood02/EatNewsVC.m; sourceTree = "<group>"; };
+		41560B3C1E154B4C005C503F /* MenuAddCaiVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuAddCaiVC.h; path = EatFood02/MenuAddCaiVC.h; sourceTree = "<group>"; };
+		41560B3D1E154B4C005C503F /* MenuAddCaiVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuAddCaiVC.m; path = EatFood02/MenuAddCaiVC.m; sourceTree = "<group>"; };
+		41560B3E1E154B4C005C503F /* MenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuVC.h; path = EatFood02/MenuVC.h; sourceTree = "<group>"; };
+		41560B3F1E154B4C005C503F /* MenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuVC.m; path = EatFood02/MenuVC.m; sourceTree = "<group>"; };
+		41560B401E154B4C005C503F /* MenuVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuVC.xib; path = EatFood02/MenuVC.xib; sourceTree = "<group>"; };
 		415CA6721DF159D200E8B7F9 /* HttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpTool.h; sourceTree = "<group>"; };
 		415CA6731DF159D200E8B7F9 /* HttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTool.m; sourceTree = "<group>"; };
 		4171E7F21E0A7917007D65EC /* PersonLove.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PersonLove.plist; sourceTree = "<group>"; };
-		419D8E691E08EF860014B199 /* MenuAddCaiVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuAddCaiVC.h; sourceTree = "<group>"; };
-		419D8E6A1E08EF860014B199 /* MenuAddCaiVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuAddCaiVC.m; sourceTree = "<group>"; };
 		41AD97FD1DE7105600781975 /* EatFood02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatFood02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AD98011DE7105600781975 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		41AD98031DE7105600781975 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -157,16 +157,16 @@
 		41AD98201DE725BD00781975 /* EatMenu */ = {
 			isa = PBXGroup;
 			children = (
+				41560B3C1E154B4C005C503F /* MenuAddCaiVC.h */,
+				41560B3D1E154B4C005C503F /* MenuAddCaiVC.m */,
+				41560B3E1E154B4C005C503F /* MenuVC.h */,
+				41560B3F1E154B4C005C503F /* MenuVC.m */,
+				41560B401E154B4C005C503F /* MenuVC.xib */,
 				41AD981A1DE7176B00781975 /* EatMenuVC.h */,
 				41AD981B1DE7176B00781975 /* EatMenuVC.m */,
 				413299701DEC668D003FFB65 /* EatMenuCell.h */,
 				413299711DEC668D003FFB65 /* EatMenuCell.m */,
 				413299721DEC668D003FFB65 /* EatMenuCell.xib */,
-				410DA27C1E08CF9200D246D5 /* MenuVC.h */,
-				410DA27D1E08CF9200D246D5 /* MenuVC.m */,
-				410DA27E1E08CF9200D246D5 /* MenuVC.xib */,
-				419D8E691E08EF860014B199 /* MenuAddCaiVC.h */,
-				419D8E6A1E08EF860014B199 /* MenuAddCaiVC.m */,
 			);
 			name = EatMenu;
 			path = ..;
@@ -295,8 +295,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				413299671DEC5A02003FFB65 /* LaunchScreenView.xib in Resources */,
+				41560B431E154B4C005C503F /* MenuVC.xib in Resources */,
 				413299741DEC668D003FFB65 /* EatMenuCell.xib in Resources */,
-				410DA2801E08CF9200D246D5 /* MenuVC.xib in Resources */,
 				4106241B1DED5526008B59E4 /* Login.storyboard in Resources */,
 				41AD98101DE7105600781975 /* LaunchScreen.storyboard in Resources */,
 				41AD980D1DE7105600781975 /* Assets.xcassets in Resources */,
@@ -365,13 +365,13 @@
 				4106241E1DED6701008B59E4 /* LoginVC.m in Sources */,
 				410624211DED6747008B59E4 /* RegisterVC.m in Sources */,
 				41AD98051DE7105600781975 /* AppDelegate.m in Sources */,
+				41560B421E154B4C005C503F /* MenuVC.m in Sources */,
 				41E9F18E1DEAEF1D0003C5CB /* JTNumberScrollAnimatedView.m in Sources */,
 				41AD981C1DE7176B00781975 /* EatMenuVC.m in Sources */,
 				41AD98021DE7105600781975 /* main.m in Sources */,
+				41560B411E154B4C005C503F /* MenuAddCaiVC.m in Sources */,
 				4132996D1DEC6654003FFB65 /* PersonMessageVC.m in Sources */,
 				413299771DEC66AD003FFB65 /* EatNewsVC.m in Sources */,
-				410DA27F1E08CF9200D246D5 /* MenuVC.m in Sources */,
-				419D8E6C1E08EF860014B199 /* MenuAddCaiVC.m in Sources */,
 				413299731DEC668D003FFB65 /* EatMenuCell.m in Sources */,
 				415CA6741DF159D200E8B7F9 /* HttpTool.m in Sources */,
 			);
@@ -494,6 +494,7 @@
 			baseConfigurationReference = 5A1FEF4ABE3B5F430F5AC0E4 /* Pods-EatFood02.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = US5WY2EYFJ;
 				INFOPLIST_FILE = EatFood02/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -511,15 +512,15 @@
 			baseConfigurationReference = 694DA1FB9F4C4B03F53E4052 /* Pods-EatFood02.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = US5WY2EYFJ;
 				INFOPLIST_FILE = EatFood02/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.poorcick.EatFood02;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "96cded68-6399-461f-8516-63a1385f2b82";
-				PROVISIONING_PROFILE_SPECIFIER = haoyuze_eatfood_distribution;
+				PROVISIONING_PROFILE = "2f2eee2d-4aa1-41f2-b2c4-0bf1eb93a5d5";
+				PROVISIONING_PROFILE_SPECIFIER = haoyuze_eatfood_development;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

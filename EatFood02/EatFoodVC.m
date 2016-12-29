@@ -13,6 +13,7 @@
 @interface EatFoodVC ()
 @property (weak, nonatomic) IBOutlet JTNumberScrollAnimatedView *animotionView;
 @property (strong, nonatomic) NSString* islogin;
+@property (weak, nonatomic) IBOutlet UILabel *menuName;
 
 //plist文件解档归档
 @property (strong, nonatomic) NSString *path;
@@ -62,9 +63,22 @@
     self.hidesBottomBarWhenPushed=NO;
 }
 - (IBAction)select_cai:(id)sender {
-    int value = (arc4random() % [_arr count]);
-    [self.animotionView setValue:[self.arr[value] objectForKey:@"cainame"]];
-    [self.animotionView startAnimation];
+    if([_arr count]==0){
+    }
+    else{
+        int value = (arc4random() % [_arr count]);
+        [self.animotionView setValue:[self.arr[value] objectForKey:@"cainame"]];
+        [self.animotionView startAnimation];
+    }
 }
 
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.row==0){
+        [self selectMenu];
+    }
+}
+
+- (void) selectMenu{
+    self.menuName.text=@"当前菜单：个人喜欢的菜单";
+}
 @end

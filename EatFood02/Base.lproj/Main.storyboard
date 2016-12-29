@@ -318,6 +318,7 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="14p-9D-gKV"/>
                     <connections>
                         <outlet property="animotionView" destination="ZFp-qW-dE8" id="j7b-8d-mTA"/>
+                        <outlet property="menuName" destination="Hzn-ju-lUL" id="a0Q-OI-uYd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qkk-Bw-FjC" userLabel="First Responder" sceneMemberID="firstResponder"/>
