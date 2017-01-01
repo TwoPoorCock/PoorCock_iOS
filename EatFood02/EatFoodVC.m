@@ -9,10 +9,10 @@
 #import "EatFoodVC.h"
 #import "PersonMessageVC.h"
 #import "JTNumberScrollAnimatedView.h"
+#import "User.h"
 
 @interface EatFoodVC ()
 @property (weak, nonatomic) IBOutlet JTNumberScrollAnimatedView *animotionView;
-@property (strong, nonatomic) NSString* islogin;
 @property (weak, nonatomic) IBOutlet UILabel *menuName;
 
 //plist文件解档归档
@@ -32,10 +32,9 @@
     //动画最少几个字
     self.animotionView.minLength = 1;
     
-    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
-    self.islogin = [defaults objectForKey:@"Letmeseesee"];//根据键值取出name
+    User* app_user = [User getAppUser];
     
-    if([self.islogin isEqual:@"no"]){
+    if([app_user.Letmeseesee isEqual:@"no"]){
         
     }else{
         UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"person"] style:UIBarButtonItemStyleDone target:self action:@selector(personMessage)];

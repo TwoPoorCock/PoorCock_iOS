@@ -9,6 +9,7 @@
 #import "EatMenuVC.h"
 #import "EatMenuCell.h"
 #import "MenuVC.h"
+#import "User.h"
 
 @interface EatMenuVC ()
 
@@ -22,8 +23,8 @@
     [super viewDidLoad];
     self.navigationItem.title = @"小鳄菜单";
     
-    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
-    self.islogin = [defaults objectForKey:@"Letmeseesee"];//根据键值取出name
+    User* app_user = [User getAppUser];
+    self.islogin = app_user.Letmeseesee;
     
 }
 

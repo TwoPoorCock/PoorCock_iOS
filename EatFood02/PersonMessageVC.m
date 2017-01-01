@@ -7,6 +7,7 @@
 //
 
 #import "PersonMessageVC.h"
+#import "User.h"
 
 @interface PersonMessageVC () <UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *per_name;
@@ -24,10 +25,8 @@
     [super viewDidLoad];
     self.navigationItem.title = @"小鳄口味";
     
-    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
-    NSString* user = [defaults objectForKey:@"user_name"];//根据键值取出name
-    NSLog(@"%@",user);
-    self.per_name.text=user;
+    User* app_user = [User getAppUser];
+    self.per_name.text=app_user.user_name;
 }
 
 - (IBAction)saveAll:(id)sender {
@@ -39,8 +38,6 @@
     }
 }
 - (IBAction)exitLogin:(id)sender {
-    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
-    [defaults setObject:nil forKey:@"user_name"];
     
     UIStoryboard *secondStoryBoard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
     UINavigationController* pm = [secondStoryBoard instantiateViewControllerWithIdentifier:@"loginroot"];

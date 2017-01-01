@@ -181,6 +181,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="luj-S6-pxI"/>
+                    <connections>
+                        <outlet property="loginBut" destination="3rr-4k-Uib" id="yFe-07-ASq"/>
+                        <outlet property="login_username" destination="FJ4-U1-HOC" id="3qf-3o-asw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8oe-3Y-Pwz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
