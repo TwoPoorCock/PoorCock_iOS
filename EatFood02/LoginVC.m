@@ -36,7 +36,7 @@
 //    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
 //    [defaults setObject:@"no" forKey:@"Letmeseesee"];
     User* app_user = [User getAppUser];
-    app_user.user_name = self.login_username.text;
+    app_user.user_name = @"小鳄鱼";
     app_user.Letmeseesee = @"no";
     
     UIStoryboard *MainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -44,7 +44,9 @@
     [self.navigationController presentViewController:viewcontroller animated:YES completion:nil];
 }
 - (IBAction)Login:(id)sender {
-    
+    if([self.login_username.text isEqualToString:@""]){
+        return ;
+    }
 //    //储存用户登录信息
 //    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
 //    [defaults setObject:@"haoyuze" forKey:@"user_name"];
