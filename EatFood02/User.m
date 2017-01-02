@@ -14,6 +14,7 @@ static User* app_user = nil;
 
 + (User*) getAppUser {
     static dispatch_once_t once;
+    //单例模式，只执行一次，dispatch_once由GCD提供
     dispatch_once(&once, ^{
         app_user = [[self alloc] init];
     });

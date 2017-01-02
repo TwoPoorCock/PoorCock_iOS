@@ -12,6 +12,6 @@
 
 }
 
-    @property NSInteger menuType;
+@property NSInteger menuType;
 
 @end

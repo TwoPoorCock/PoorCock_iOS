@@ -23,18 +23,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"喜欢的菜单";
-    
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCai)];
-    self.navigationItem.rightBarButtonItem = rightButton;
-    
+    if(self.menuType==1){
+        self.navigationItem.title = @"喜欢的菜单";
+        UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCai)];
+        self.navigationItem.rightBarButtonItem = rightButton;
+    }else if(self.menuType==2){
+        self.navigationItem.title = @"吃过的菜单";
+    }
+
 }
 
 - (void) viewWillAppear:(BOOL)animated{
-    //plist文件解档
-    self.path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
-    self.filePath = [self.path stringByAppendingPathComponent:@"PersonLove.plist"];
-    self.arr = [NSArray arrayWithContentsOfFile:self.filePath];
+    
+    if(self.menuType==1){
+        //plist文件解档
+        self.path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+        self.filePath = [self.path stringByAppendingPathComponent:@"PersonLove.plist"];
+        self.arr = [NSArray arrayWithContentsOfFile:self.filePath];
+    }else if(self.menuType==2){
+        //plist文件解档
+        self.path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+        self.filePath = [self.path stringByAppendingPathComponent:@"HistoryMenu.plist"];
+        self.arr = [NSArray arrayWithContentsOfFile:self.filePath];
+    }
+    
     
     [self.tableView reloadData];
 }
@@ -59,10 +71,17 @@
     NSString *cellIdentifier = @"CaiCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    if (cell == nil) {
+    if(cell == nil) {
         cell =[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    if(self.menuType==1){
+        //喜欢的菜单菜品排列
         cell.imageView.image = [UIImage imageNamed:@"透明E"];
         cell.textLabel.text = [self.arr[indexPath.row] objectForKey:@"cainame"];
+    }else if(self.menuType==2){
+        //历史的菜单菜品倒叙排列
+        cell.imageView.image = [UIImage imageNamed:@"透明E"];
+        cell.textLabel.text = [self.arr[[self.arr count]-indexPath.row-1] objectForKey:@"cainame"];
     }
     
     return cell;

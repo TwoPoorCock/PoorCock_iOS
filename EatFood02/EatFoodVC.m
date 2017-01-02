@@ -11,7 +11,7 @@
 #import "JTNumberScrollAnimatedView.h"
 #import "User.h"
 
-@interface EatFoodVC ()
+@interface EatFoodVC () <UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet JTNumberScrollAnimatedView *animotionView;
 @property (weak, nonatomic) IBOutlet UILabel *menuName;
 
@@ -19,6 +19,8 @@
 @property (strong, nonatomic) NSString *path;
 @property (strong, nonatomic) NSString *filePath;
 @property (strong, nonatomic) NSArray *arr;
+//被选中的菜品
+@property (strong, nonatomic) NSDictionary *beSelectDic;
 @end
 
 @implementation EatFoodVC
@@ -57,6 +59,7 @@
     UIStoryboard *secondStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     PersonMessageVC* pm = [secondStoryBoard instantiateViewControllerWithIdentifier:@"personmessagevc"];  //personmessagevc为viewcontroller的StoryboardId
 
+    //隐藏、显示工具栏
     self.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:pm animated:YES];
     self.hidesBottomBarWhenPushed=NO;
@@ -66,8 +69,14 @@
     }
     else{
         int value = (arc4random() % [_arr count]);
+        self.beSelectDic = self.arr[value];
         [self.animotionView setValue:[self.arr[value] objectForKey:@"cainame"]];
         [self.animotionView startAnimation];
+    }
+    User* app_user = [User getAppUser];
+    if([app_user.Letmeseesee isEqualToString:@"yes"]){
+        //开始动画后1.5秒弹出确认框
+        [self performSelector:@selector(confirmCai) withObject:nil afterDelay:1.5f];
     }
 }
 
@@ -79,5 +88,44 @@
 
 - (void) selectMenu{
     self.menuName.text=@"当前菜单：个人喜欢的菜单";
+}
+
+- (void) confirmCai{
+    
+    UIAlertView* selectCaiAlertView = [[UIAlertView alloc] initWithTitle:@"你确定就吃它啊～～～" message:@"确定后将加入历史菜单" delegate:self cancelButtonTitle:@"换一个" otherButtonTitles:@"就吃它", nil];
+    
+    [selectCaiAlertView setAlertViewStyle:UIAlertViewStyleDefault];
+    [selectCaiAlertView show];
+}
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    if([alertView.title isEqualToString:@"你确定就吃它啊～～～"]){
+        
+        if (buttonIndex == 1){
+            //plist文件解档
+            //历史菜单菜品plist文件
+            NSString *historypath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+            NSString *historyfilePath = [historypath stringByAppendingPathComponent:@"HistoryMenu.plist"];
+            NSArray *historyarr = [NSArray arrayWithContentsOfFile:historyfilePath];
+            if(historyarr==nil){
+                historyarr = [[NSArray alloc] init];
+            }
+            NSMutableArray *myhistoryMutableArray = [historyarr mutableCopy];
+            //把被选中的菜的详细信息导入历史菜单中
+            NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 [self.beSelectDic objectForKey:@"cainame"], @"cainame",
+                                 [self.beSelectDic objectForKey:@"caihot"], @"caihot",
+                                 [self.beSelectDic objectForKey:@"caimeat"], @"caimeat",
+                                 [NSString stringWithFormat: @"time"], @"eattime",
+                                 nil];
+            [myhistoryMutableArray addObject:dic];
+            NSLog(@"%@", myhistoryMutableArray);
+            NSArray *myhistoryArray = [myhistoryMutableArray copy];
+            
+            //plist文件归档
+            [myhistoryArray writeToFile:historyfilePath atomically:YES];
+
+        }
+    }
 }
 @end

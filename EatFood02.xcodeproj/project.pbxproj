@@ -29,6 +29,7 @@
 		41AD980D1DE7105600781975 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41AD980C1DE7105600781975 /* Assets.xcassets */; };
 		41AD98101DE7105600781975 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41AD980E1DE7105600781975 /* LaunchScreen.storyboard */; };
 		41AD981C1DE7176B00781975 /* EatMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AD981B1DE7176B00781975 /* EatMenuVC.m */; };
+		41CBF9D91E1A21F600F249E2 /* HistoryMenu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41CBF9D81E1A21F600F249E2 /* HistoryMenu.plist */; };
 		41E9F18E1DEAEF1D0003C5CB /* JTNumberScrollAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E9F18D1DEAEF1D0003C5CB /* JTNumberScrollAnimatedView.m */; };
 		58D598C29492C8C6E1840AD8 /* libPods-EatFood02.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8B271167707D4DCB369C33 /* libPods-EatFood02.a */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		41AD98111DE7105600781975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41AD981A1DE7176B00781975 /* EatMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EatMenuVC.h; path = EatFood02/EatMenuVC.h; sourceTree = "<group>"; };
 		41AD981B1DE7176B00781975 /* EatMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EatMenuVC.m; path = EatFood02/EatMenuVC.m; sourceTree = "<group>"; };
+		41CBF9D81E1A21F600F249E2 /* HistoryMenu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HistoryMenu.plist; sourceTree = "<group>"; };
 		41E9F18C1DEAEF100003C5CB /* JTNumberScrollAnimatedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JTNumberScrollAnimatedView.h; sourceTree = "<group>"; };
 		41E9F18D1DEAEF1D0003C5CB /* JTNumberScrollAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTNumberScrollAnimatedView.m; sourceTree = "<group>"; };
 		5A1FEF4ABE3B5F430F5AC0E4 /* Pods-EatFood02.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatFood02.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EatFood02/Pods-EatFood02.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			children = (
 				41AD98011DE7105600781975 /* main.m */,
 				4171E7F21E0A7917007D65EC /* PersonLove.plist */,
+				41CBF9D81E1A21F600F249E2 /* HistoryMenu.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				41AD980D1DE7105600781975 /* Assets.xcassets in Resources */,
 				41AD980B1DE7105600781975 /* Main.storyboard in Resources */,
 				4171E7F31E0A7917007D65EC /* PersonLove.plist in Resources */,
+				41CBF9D91E1A21F600F249E2 /* HistoryMenu.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

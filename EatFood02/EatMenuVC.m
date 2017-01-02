@@ -83,16 +83,18 @@
     
     if(indexPath.section==0)//第一个分区
     {
-        if(indexPath.row==0)
+        if(indexPath.row==0)//校园菜单
         {
         }
-        if(indexPath.row==1)
+        if(indexPath.row==1)//喜欢的菜单
         {
             menuVC.menuType = 1;
             [self.navigationController pushViewController:menuVC animated:YES];
         }
-        if(indexPath.row==2)
+        if(indexPath.row==2)//历史菜单
         {
+            menuVC.menuType = 2;
+            [self.navigationController pushViewController:menuVC animated:YES];
         }
     }
 }
