@@ -31,6 +31,8 @@
 		41AD981C1DE7176B00781975 /* EatMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AD981B1DE7176B00781975 /* EatMenuVC.m */; };
 		41CBF9D91E1A21F600F249E2 /* HistoryMenu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41CBF9D81E1A21F600F249E2 /* HistoryMenu.plist */; };
 		41E9F18E1DEAEF1D0003C5CB /* JTNumberScrollAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E9F18D1DEAEF1D0003C5CB /* JTNumberScrollAnimatedView.m */; };
+		41FEEEF61E1AA24300C5D7A6 /* pickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FEEEF41E1AA24300C5D7A6 /* pickViewController.m */; };
+		41FEEEF71E1AA24300C5D7A6 /* pickViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FEEEF51E1AA24300C5D7A6 /* pickViewController.xib */; };
 		58D598C29492C8C6E1840AD8 /* libPods-EatFood02.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8B271167707D4DCB369C33 /* libPods-EatFood02.a */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,9 @@
 		41CBF9D81E1A21F600F249E2 /* HistoryMenu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HistoryMenu.plist; sourceTree = "<group>"; };
 		41E9F18C1DEAEF100003C5CB /* JTNumberScrollAnimatedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JTNumberScrollAnimatedView.h; sourceTree = "<group>"; };
 		41E9F18D1DEAEF1D0003C5CB /* JTNumberScrollAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTNumberScrollAnimatedView.m; sourceTree = "<group>"; };
+		41FEEEF31E1AA24300C5D7A6 /* pickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pickViewController.h; path = EatFood02/pickViewController.h; sourceTree = "<group>"; };
+		41FEEEF41E1AA24300C5D7A6 /* pickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = pickViewController.m; path = EatFood02/pickViewController.m; sourceTree = "<group>"; };
+		41FEEEF51E1AA24300C5D7A6 /* pickViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = pickViewController.xib; path = EatFood02/pickViewController.xib; sourceTree = "<group>"; };
 		5A1FEF4ABE3B5F430F5AC0E4 /* Pods-EatFood02.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatFood02.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EatFood02/Pods-EatFood02.debug.xcconfig"; sourceTree = "<group>"; };
 		694DA1FB9F4C4B03F53E4052 /* Pods-EatFood02.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatFood02.release.xcconfig"; path = "Pods/Target Support Files/Pods-EatFood02/Pods-EatFood02.release.xcconfig"; sourceTree = "<group>"; };
 		AB8B271167707D4DCB369C33 /* libPods-EatFood02.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EatFood02.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +198,9 @@
 		41AD98281DE74AAF00781975 /* EatFood */ = {
 			isa = PBXGroup;
 			children = (
+				41FEEEF31E1AA24300C5D7A6 /* pickViewController.h */,
+				41FEEEF41E1AA24300C5D7A6 /* pickViewController.m */,
+				41FEEEF51E1AA24300C5D7A6 /* pickViewController.xib */,
 				4132996B1DEC6654003FFB65 /* PersonMessageVC.h */,
 				4132996C1DEC6654003FFB65 /* PersonMessageVC.m */,
 				413299681DEC65BD003FFB65 /* EatFoodVC.h */,
@@ -303,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				413299671DEC5A02003FFB65 /* LaunchScreenView.xib in Resources */,
+				41FEEEF71E1AA24300C5D7A6 /* pickViewController.xib in Resources */,
 				41560B431E154B4C005C503F /* MenuVC.xib in Resources */,
 				413299741DEC668D003FFB65 /* EatMenuCell.xib in Resources */,
 				4106241B1DED5526008B59E4 /* Login.storyboard in Resources */,
@@ -374,6 +383,7 @@
 				4106241E1DED6701008B59E4 /* LoginVC.m in Sources */,
 				410624211DED6747008B59E4 /* RegisterVC.m in Sources */,
 				41AD98051DE7105600781975 /* AppDelegate.m in Sources */,
+				41FEEEF61E1AA24300C5D7A6 /* pickViewController.m in Sources */,
 				412F50851E18FD8600FC8497 /* User.m in Sources */,
 				41560B421E154B4C005C503F /* MenuVC.m in Sources */,
 				41E9F18E1DEAEF1D0003C5CB /* JTNumberScrollAnimatedView.m in Sources */,

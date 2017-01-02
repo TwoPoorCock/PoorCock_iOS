@@ -10,8 +10,9 @@
 #import "PersonMessageVC.h"
 #import "JTNumberScrollAnimatedView.h"
 #import "User.h"
+#import "pickViewController.h"
 
-@interface EatFoodVC () <UIAlertViewDelegate>
+@interface EatFoodVC () <UIAlertViewDelegate,pickViewDelegate>
 @property (weak, nonatomic) IBOutlet JTNumberScrollAnimatedView *animotionView;
 @property (weak, nonatomic) IBOutlet UILabel *menuName;
 
@@ -87,9 +88,15 @@
 }
 
 - (void) selectMenu{
-    self.menuName.text=@"当前菜单：个人喜欢的菜单";
+    pickViewController *pick = [[pickViewController alloc] initWithNibName:@"pickViewController" bundle:nil];
+    pick.delegate = self;
+    pick.modalPresentationStyle = UIModalPresentationCustom;
+    [self presentViewController:pick animated:YES completion:nil];
 }
-
+- (void)getTextStr:(NSString *)text{
+    //字符串拼接较好办法
+    self.menuName.text=[@"当前菜单：" stringByAppendingString:text];
+}
 - (void) confirmCai{
     
     UIAlertView* selectCaiAlertView = [[UIAlertView alloc] initWithTitle:@"你确定就吃它啊～～～" message:@"确定后将加入历史菜单" delegate:self cancelButtonTitle:@"换一个" otherButtonTitles:@"就吃它", nil];
