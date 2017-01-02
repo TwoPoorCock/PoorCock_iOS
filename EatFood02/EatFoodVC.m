@@ -96,6 +96,18 @@
 - (void)getTextStr:(NSString *)text{
     //字符串拼接较好办法
     self.menuName.text=[@"当前菜单：" stringByAppendingString:text];
+    
+    if([self.menuName.text isEqualToString:@"当前菜单：小鳄喜欢的菜单"]){
+        //plist文件解档
+        self.path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+        self.filePath = [self.path stringByAppendingPathComponent:@"PersonLove.plist"];
+        self.arr = [NSArray arrayWithContentsOfFile:self.filePath];
+    }else if ([self.menuName.text isEqualToString:@"当前菜单：历史菜单"]){
+        //plist文件解档
+        self.path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+        self.filePath = [self.path stringByAppendingPathComponent:@"HistoryMenu.plist"];
+        self.arr = [NSArray arrayWithContentsOfFile:self.filePath];
+    }
 }
 - (void) confirmCai{
     
