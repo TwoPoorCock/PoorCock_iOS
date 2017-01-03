@@ -22,6 +22,9 @@
 		41560B431E154B4C005C503F /* MenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41560B401E154B4C005C503F /* MenuVC.xib */; };
 		415CA6741DF159D200E8B7F9 /* HttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 415CA6731DF159D200E8B7F9 /* HttpTool.m */; };
 		4171E7F31E0A7917007D65EC /* PersonLove.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4171E7F21E0A7917007D65EC /* PersonLove.plist */; };
+		4182B3D31E1B67EE00E0579E /* EatNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4182B3D11E1B67EE00E0579E /* EatNewsCell.m */; };
+		4182B3D41E1B67EE00E0579E /* EatNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4182B3D21E1B67EE00E0579E /* EatNewsCell.xib */; };
+		4182B3D71E1B85D000E0579E /* NewsWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4182B3D61E1B85D000E0579E /* NewsWebVC.m */; };
 		41AD98021DE7105600781975 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AD98011DE7105600781975 /* main.m */; };
 		41AD98051DE7105600781975 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AD98041DE7105600781975 /* AppDelegate.m */; };
 		41AD98081DE7105600781975 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AD98071DE7105600781975 /* ViewController.m */; };
@@ -62,6 +65,11 @@
 		415CA6721DF159D200E8B7F9 /* HttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpTool.h; sourceTree = "<group>"; };
 		415CA6731DF159D200E8B7F9 /* HttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTool.m; sourceTree = "<group>"; };
 		4171E7F21E0A7917007D65EC /* PersonLove.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PersonLove.plist; sourceTree = "<group>"; };
+		4182B3D01E1B67EE00E0579E /* EatNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EatNewsCell.h; path = EatFood02/EatNewsCell.h; sourceTree = "<group>"; };
+		4182B3D11E1B67EE00E0579E /* EatNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EatNewsCell.m; path = EatFood02/EatNewsCell.m; sourceTree = "<group>"; };
+		4182B3D21E1B67EE00E0579E /* EatNewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EatNewsCell.xib; path = EatFood02/EatNewsCell.xib; sourceTree = "<group>"; };
+		4182B3D51E1B85D000E0579E /* NewsWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsWebVC.h; path = EatFood02/NewsWebVC.h; sourceTree = "<group>"; };
+		4182B3D61E1B85D000E0579E /* NewsWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsWebVC.m; path = EatFood02/NewsWebVC.m; sourceTree = "<group>"; };
 		41AD97FD1DE7105600781975 /* EatFood02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatFood02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41AD98011DE7105600781975 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		41AD98031DE7105600781975 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -190,6 +198,11 @@
 			children = (
 				413299751DEC66AD003FFB65 /* EatNewsVC.h */,
 				413299761DEC66AD003FFB65 /* EatNewsVC.m */,
+				4182B3D01E1B67EE00E0579E /* EatNewsCell.h */,
+				4182B3D11E1B67EE00E0579E /* EatNewsCell.m */,
+				4182B3D21E1B67EE00E0579E /* EatNewsCell.xib */,
+				4182B3D51E1B85D000E0579E /* NewsWebVC.h */,
+				4182B3D61E1B85D000E0579E /* NewsWebVC.m */,
 			);
 			name = EatNews;
 			path = ..;
@@ -316,6 +329,7 @@
 				413299741DEC668D003FFB65 /* EatMenuCell.xib in Resources */,
 				4106241B1DED5526008B59E4 /* Login.storyboard in Resources */,
 				41AD98101DE7105600781975 /* LaunchScreen.storyboard in Resources */,
+				4182B3D41E1B67EE00E0579E /* EatNewsCell.xib in Resources */,
 				41AD980D1DE7105600781975 /* Assets.xcassets in Resources */,
 				41AD980B1DE7105600781975 /* Main.storyboard in Resources */,
 				4171E7F31E0A7917007D65EC /* PersonLove.plist in Resources */,
@@ -387,6 +401,8 @@
 				412F50851E18FD8600FC8497 /* User.m in Sources */,
 				41560B421E154B4C005C503F /* MenuVC.m in Sources */,
 				41E9F18E1DEAEF1D0003C5CB /* JTNumberScrollAnimatedView.m in Sources */,
+				4182B3D31E1B67EE00E0579E /* EatNewsCell.m in Sources */,
+				4182B3D71E1B85D000E0579E /* NewsWebVC.m in Sources */,
 				41AD981C1DE7176B00781975 /* EatMenuVC.m in Sources */,
 				41AD98021DE7105600781975 /* main.m in Sources */,
 				41560B411E154B4C005C503F /* MenuAddCaiVC.m in Sources */,

@@ -7,6 +7,8 @@
 //
 
 #import "EatNewsVC.h"
+#import "EatNewsCell.h"
+#import "NewsWebVC.h"
 
 @interface EatNewsVC ()
 
@@ -31,26 +33,47 @@
 
 #pragma mark - Table view data source
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Incomplete implementation, return the number of sections
-//    return 0;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete implementation, return the number of rows
-//    return 0;
-//}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
 
-/*
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    NSString *cellIdentifier = @"NewsCell";
+    EatNewsCell *cell = (EatNewsCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        UINib *nib=[UINib nibWithNibName:@"EatNewsCell" bundle:nil];
+        [tableView registerNib:nib forCellReuseIdentifier:cellIdentifier];
+        cell = (EatNewsCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    }
+    if(indexPath.section==0)//第一个分区
+    {
+        if(indexPath.row==0)
+        {
+            cell.newsTitle.text = @"老将军绥远什锦火锅";
+            cell.newsText.text = @"来自学长的冬季温暖、好吃又实惠";
+            cell.newsImage.image = [UIImage imageNamed:@"小鳄吃饭"];
+        }
+    }
     return cell;
 }
-*/
 
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NewsWebVC* newswebVC = [[NewsWebVC alloc] init];
+    
+    if(indexPath.section==0)//第一个分区
+    {
+        if(indexPath.row==0)
+        {
+            [self.navigationController pushViewController:newswebVC animated:YES];
+        }
+    }
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
