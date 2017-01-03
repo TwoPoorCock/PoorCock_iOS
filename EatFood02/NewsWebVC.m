@@ -8,6 +8,7 @@
 
 #import "NewsWebVC.h"
 #import <WebKit/WebKit.h>
+#import "MBProgressHUD.h"
 
 @interface NewsWebVC () <WKNavigationDelegate>
 
@@ -32,10 +33,24 @@
 }
 
 - (void)testLoadRequest{
-    NSURL * url = [NSURL URLWithString:@"http://www.baidu.com"];
-    NSURLRequest * request = [NSURLRequest requestWithURL:url];
-    [self.webView loadRequest:request];
-    self.webView.navigationDelegate = self;
+    // 使用MBProgressHUD最重要的准则是当要执行一个耗时任务时,不能放在主线程上影响UI的刷新
+    // 正确地使用方式是在主线程上创建MBProgressHUD,然后在子线程上执行耗时操作,执行完再在主线程上刷新UI
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeAnnularDeterminate;
+    hud.label.text = @"Loading";
+    [hud showAnimated:YES];
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        NSURL * url = [NSURL URLWithString:@"http://tieba.baidu.com/p/4870153021?pn=1&statsInfo=frs_pager"];
+        NSURLRequest * request = [NSURLRequest requestWithURL:url];
+        [self.webView loadRequest:request];
+        self.webView.navigationDelegate = self;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+        });
+    });
+    
 }
 /*
 #pragma mark - Navigation

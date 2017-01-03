@@ -70,7 +70,9 @@
     {
         if(indexPath.row==0)
         {
+            self.hidesBottomBarWhenPushed=YES;
             [self.navigationController pushViewController:newswebVC animated:YES];
+            self.hidesBottomBarWhenPushed=NO;
         }
     }
 }
