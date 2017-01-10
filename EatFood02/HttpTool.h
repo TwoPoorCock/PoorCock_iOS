@@ -10,5 +10,7 @@
 #import "AFNetworking.h"
 
 @interface HttpTool : NSObject
--(void)postHttpurl:(NSString*)domainStr anddictionary:(NSMutableDictionary*)parametersDic;
++ (AFHTTPSessionManager *)HttpManager;
++ (void)getHttpUrl:(NSString*)domainStr andDictionary:(NSMutableDictionary*)parametersDic;
+
 @end

@@ -29,12 +29,9 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
 - (IBAction)let_me_seesee:(id)sender {
-    
-//    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
-//    [defaults setObject:@"no" forKey:@"Letmeseesee"];
     User* app_user = [User getAppUser];
     app_user.user_name = @"小鳄鱼";
     app_user.Letmeseesee = @"no";
@@ -47,14 +44,25 @@
     if([self.login_username.text isEqualToString:@""]){
         return ;
     }
-//    //储存用户登录信息
-//    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
-//    [defaults setObject:@"haoyuze" forKey:@"user_name"];
-//    //不是游客模式
-//    [defaults setObject:@"yes" forKey:@"Letmeseesee"];
-    User* app_user = [User getAppUser];
-    app_user.user_name = self.login_username.text;
-    app_user.Letmeseesee = @"yes";
+    
+    NSString* url = @"http://123.57.64.99/poolman/app/login";
+    //创建一个可变字典
+    NSMutableDictionary *parametersDic = [NSMutableDictionary dictionary];
+    //往字典里面添加需要提交的参数
+    [parametersDic setObject:self.login_username.text forKey:@"userName"];
+    [parametersDic setObject:self.login_username.text forKey:@"passWord"];
+    
+    [[HttpTool HttpManager] GET:url parameters:parametersDic progress:nil success:^(NSURLSessionTask *operation, id responseObject) {
+        //json解析
+        NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+        NSLog(@"---获取到的json格式的字典--%@",resultDic);
+        User* app_user = [User getAppUser];
+        app_user.user_name = resultDic[@"data"][@"UserNotice"][@"userName"];
+        app_user.Letmeseesee = @"yes";
+        
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        
+    }];
     
     //获取主界面
     UIStoryboard *MainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -63,16 +71,6 @@
     [self.navigationController presentViewController:viewcontroller animated:YES completion:nil];
     
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 //实现textField代理方法，textField键盘弹出高度自适应
 - (void)textFieldDidBeginEditing:(UITextField *)textField

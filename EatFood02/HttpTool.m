@@ -10,7 +10,16 @@
 #import "AFNetworking.h"
 
 @implementation HttpTool
--(void)postHttpurl:(NSString*)domainStr anddictionary:(NSMutableDictionary*)parametersDic
+
++ (AFHTTPSessionManager *)HttpManager{
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    return manager;
+    
+}
+
++ (void)getHttpUrl:(NSString*)domainStr andDictionary:(NSMutableDictionary*)parametersDic
 {
     // 启动系统风火轮
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
@@ -18,8 +27,7 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     
-    //以post的形式提交，POST的参数就是上面的域名，parameters的参数是一个字典类型，将上面的字典作为它的参数
-    [manager POST:domainStr parameters:parametersDic success:^(NSURLSessionTask *operation, id responseObject) {
+    [manager GET:domainStr parameters:parametersDic progress:nil success:^(NSURLSessionTask *operation, id responseObject) {
         // 隐藏系统风火轮
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         
@@ -32,7 +40,7 @@
         
         // 解析失败隐藏系统风火轮(可以打印error.userInfo查看错误信息)
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        
     }];
+
 }
 @end
