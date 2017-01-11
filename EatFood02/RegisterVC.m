@@ -9,6 +9,7 @@
 #import "RegisterVC.h"
 #import "HttpTool.h"
 #import "UIImageView+WebCache.h"
+#import "MBProgressHUD+Toast.h"
 
 @interface RegisterVC ()
 @property (weak, nonatomic) IBOutlet UITextField *register_name;
@@ -39,7 +40,13 @@
         NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
         
         NSLog(@"---获取到的json格式的字典--%@",resultDic);
-        [self.navigationController popViewControllerAnimated:YES];
+        
+        if([resultDic[@"msg"] isEqualToString:@"用户已存在"]){
+            [MBProgressHUD showToastToView:self.view withText:@"用户已存在"];
+        }else{
+            [self.navigationController popViewControllerAnimated:YES];
+            [MBProgressHUD showToastToView:self.view withText:@"注册成功"];
+        }
         
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         

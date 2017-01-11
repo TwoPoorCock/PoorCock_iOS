@@ -10,6 +10,8 @@
 #import "ViewController.h"
 #import "HttpTool.h"
 #import "User.h"
+#import "MBProgressHUD.h"
+#import "MBProgressHUD+Toast.h"
 
 @interface LoginVC ()
 @property (weak, nonatomic) IBOutlet UIButton *loginBut;
@@ -39,9 +41,11 @@
     UIStoryboard *MainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ViewController* viewcontroller = [MainStoryBoard instantiateViewControllerWithIdentifier:@"viewcontroller"];
     [self.navigationController presentViewController:viewcontroller animated:YES completion:nil];
+    [MBProgressHUD showToastToView:self.view withText:@"试用成功"];
 }
 - (IBAction)Login:(id)sender {
     if([self.login_username.text isEqualToString:@""]){
+        [MBProgressHUD showToastToView:self.view withText:@"你到底叫啥？"];
         return ;
     }
     
@@ -56,19 +60,24 @@
         //json解析
         NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
         NSLog(@"---获取到的json格式的字典--%@",resultDic);
-        User* app_user = [User getAppUser];
-        app_user.user_name = resultDic[@"data"][@"UserNotice"][@"userName"];
-        app_user.Letmeseesee = @"yes";
+        
+        if([resultDic[@"msg"] isEqualToString:@"操作成功"]){
+            User* app_user = [User getAppUser];
+            app_user.user_name = resultDic[@"data"][@"UserNotice"][@"userName"];
+            app_user.Letmeseesee = @"yes";
+            [MBProgressHUD showToastToView:self.view withText:@"登录成功"];
+            //获取主界面
+            UIStoryboard *MainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            ViewController* viewcontroller = [MainStoryBoard instantiateViewControllerWithIdentifier:@"viewcontroller"];
+            //模态界面推出
+            [self.navigationController presentViewController:viewcontroller animated:YES completion:nil];
+        }else{
+            [MBProgressHUD showToastToView:self.view withText:@"不是这个名字哦"];
+        }
         
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         
     }];
-    
-    //获取主界面
-    UIStoryboard *MainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ViewController* viewcontroller = [MainStoryBoard instantiateViewControllerWithIdentifier:@"viewcontroller"];
-    //模态界面推出
-    [self.navigationController presentViewController:viewcontroller animated:YES completion:nil];
     
 }
 
