@@ -198,7 +198,7 @@
             <objects>
                 <navigationController storyboardIdentifier="eatmenunavvc" id="S0E-GR-utC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" enabled="NO" title="Item" id="eEh-QM-3Ys"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EJr-cT-LFh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EJr-cT-LFh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -34,6 +34,7 @@
 		41AD98101DE7105600781975 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41AD980E1DE7105600781975 /* LaunchScreen.storyboard */; };
 		41AD981C1DE7176B00781975 /* EatMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AD981B1DE7176B00781975 /* EatMenuVC.m */; };
 		41CBF9D91E1A21F600F249E2 /* HistoryMenu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41CBF9D81E1A21F600F249E2 /* HistoryMenu.plist */; };
+		41D7378D1E27646600C97AD7 /* HealthyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D7378C1E27646600C97AD7 /* HealthyVC.m */; };
 		41E9F18E1DEAEF1D0003C5CB /* JTNumberScrollAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E9F18D1DEAEF1D0003C5CB /* JTNumberScrollAnimatedView.m */; };
 		41FEEEF61E1AA24300C5D7A6 /* pickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FEEEF41E1AA24300C5D7A6 /* pickViewController.m */; };
 		41FEEEF71E1AA24300C5D7A6 /* pickViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41FEEEF51E1AA24300C5D7A6 /* pickViewController.xib */; };
@@ -86,6 +87,8 @@
 		41AD981A1DE7176B00781975 /* EatMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EatMenuVC.h; path = EatFood02/EatMenuVC.h; sourceTree = "<group>"; };
 		41AD981B1DE7176B00781975 /* EatMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EatMenuVC.m; path = EatFood02/EatMenuVC.m; sourceTree = "<group>"; };
 		41CBF9D81E1A21F600F249E2 /* HistoryMenu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HistoryMenu.plist; sourceTree = "<group>"; };
+		41D7378B1E27646600C97AD7 /* HealthyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthyVC.h; sourceTree = "<group>"; };
+		41D7378C1E27646600C97AD7 /* HealthyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthyVC.m; sourceTree = "<group>"; };
 		41E9F18C1DEAEF100003C5CB /* JTNumberScrollAnimatedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JTNumberScrollAnimatedView.h; sourceTree = "<group>"; };
 		41E9F18D1DEAEF1D0003C5CB /* JTNumberScrollAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTNumberScrollAnimatedView.m; sourceTree = "<group>"; };
 		41FEEEF31E1AA24300C5D7A6 /* pickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pickViewController.h; path = EatFood02/pickViewController.h; sourceTree = "<group>"; };
@@ -118,6 +121,8 @@
 				410624201DED6747008B59E4 /* RegisterVC.m */,
 				412F50831E18FD8600FC8497 /* User.h */,
 				412F50841E18FD8600FC8497 /* User.m */,
+				41D7378B1E27646600C97AD7 /* HealthyVC.h */,
+				41D7378C1E27646600C97AD7 /* HealthyVC.m */,
 			);
 			name = LoginAndRegister;
 			sourceTree = "<group>";
@@ -407,6 +412,7 @@
 				41560B421E154B4C005C503F /* MenuVC.m in Sources */,
 				41E9F18E1DEAEF1D0003C5CB /* JTNumberScrollAnimatedView.m in Sources */,
 				4182B3D31E1B67EE00E0579E /* EatNewsCell.m in Sources */,
+				41D7378D1E27646600C97AD7 /* HealthyVC.m in Sources */,
 				4182B3D71E1B85D000E0579E /* NewsWebVC.m in Sources */,
 				41AD981C1DE7176B00781975 /* EatMenuVC.m in Sources */,
 				41AD98021DE7105600781975 /* main.m in Sources */,
