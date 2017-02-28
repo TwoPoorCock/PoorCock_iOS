@@ -127,7 +127,7 @@
 			name = LoginAndRegister;
 			sourceTree = "<group>";
 		};
-		415CA6711DF159A500E8B7F9 /* HTTP */ = {
+		415CA6711DF159A500E8B7F9 /* EatTool */ = {
 			isa = PBXGroup;
 			children = (
 				415CA6721DF159D200E8B7F9 /* HttpTool.h */,
@@ -135,7 +135,7 @@
 				419CEDAB1E26145300E2CD57 /* MBProgressHUD+Toast.h */,
 				419CEDAC1E26145300E2CD57 /* MBProgressHUD+Toast.m */,
 			);
-			name = HTTP;
+			name = EatTool;
 			sourceTree = "<group>";
 		};
 		41AD97F41DE7105600781975 = {
@@ -159,7 +159,7 @@
 		41AD97FF1DE7105600781975 /* EatFood02 */ = {
 			isa = PBXGroup;
 			children = (
-				415CA6711DF159A500E8B7F9 /* HTTP */,
+				415CA6711DF159A500E8B7F9 /* EatTool */,
 				410624191DED54B1008B59E4 /* LoginAndRegister */,
 				41F72D861DEAE55000968836 /* EatAnimotion */,
 				41AD982C1DE74B4C00781975 /* Main */,

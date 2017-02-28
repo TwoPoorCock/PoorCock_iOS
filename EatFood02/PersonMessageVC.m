@@ -8,6 +8,7 @@
 
 #import "PersonMessageVC.h"
 #import "User.h"
+#import "HttpTool.h"
 
 @interface PersonMessageVC () <UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *per_name;
@@ -16,7 +17,19 @@
 
 @property (weak, nonatomic) IBOutlet UISwitch *love_hot;
 
+@property (weak, nonatomic) IBOutlet UITextField *per_height;
+
+@property (weak, nonatomic) IBOutlet UITextField *per_weight;
+
 @property (weak, nonatomic) IBOutlet UILabel *love_mainfood;
+
+@property (weak, nonatomic) IBOutlet UISwitch *per_weitong;
+
+@property (weak, nonatomic) IBOutlet UISwitch *per_mouth;
+
+@property (weak, nonatomic) IBOutlet UISwitch *per_tooth;
+
+@property (weak, nonatomic) IBOutlet UISwitch *per_fat;
 @end
 
 @implementation PersonMessageVC
@@ -27,9 +40,35 @@
     
     User* app_user = [User getAppUser];
     self.per_name.text=app_user.user_name;
+    
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStyleDone target:self action:@selector(saveAll:)];
+    
+    self.navigationItem.rightBarButtonItem = rightButton;
 }
 
 - (IBAction)saveAll:(id)sender {
+//    [[HttpTool HttpManager] GET:nil parameters:parametersDic progress:nil success:^(NSURLSessionTask *operation, id responseObject) {
+//        //json解析
+//        NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+//        NSLog(@"---获取到的json格式的字典--%@",resultDic);
+//        
+//        if([resultDic[@"msg"] isEqualToString:@"操作成功"]){
+//            User* app_user = [User getAppUser];
+//            app_user.user_name = resultDic[@"data"][@"UserNotice"][@"userName"];
+//            app_user.Letmeseesee = @"yes";
+//            [MBProgressHUD showToastToView:self.view withText:@"登录成功"];
+//            //获取主界面
+//            UIStoryboard *MainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//            ViewController* viewcontroller = [MainStoryBoard instantiateViewControllerWithIdentifier:@"viewcontroller"];
+//            //模态界面推出
+//            [self.navigationController presentViewController:viewcontroller animated:YES completion:nil];
+//        }else{
+//            [MBProgressHUD showToastToView:self.view withText:@"不是这个名字哦"];
+//        }
+//        
+//    } failure:^(NSURLSessionTask *operation, NSError *error) {
+//        
+//    }];
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
