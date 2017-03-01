@@ -72,6 +72,8 @@
         if([resultDic[@"msg"] isEqualToString:@"操作成功"]){
             [self.navigationController popViewControllerAnimated:YES];
             NSLog(@"保存成功");
+            
+            app_user.user_name = self.per_name.text;
             //        [MBProgressHUD showToastToView:self.view withText:@"不是这个名字哦"];
         }else{
             NSLog(@"保存失败");

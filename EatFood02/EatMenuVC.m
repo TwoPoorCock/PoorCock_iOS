@@ -85,6 +85,8 @@
     {
         if(indexPath.row==0)//校园菜单
         {
+            menuVC.menuType = 0;
+            [self.navigationController pushViewController:menuVC animated:YES];
         }
         if(indexPath.row==1)//喜欢的菜单
         {

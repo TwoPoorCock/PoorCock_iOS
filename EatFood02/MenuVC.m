@@ -9,13 +9,14 @@
 #import "MenuVC.h"
 #import "MenuAddCaiVC.h"
 #import "MJRefresh.h"
+#import "HttpTool.h"
 
 @interface MenuVC ()
 
 @property (strong, nonatomic) NSString *path;
 @property (strong, nonatomic) NSString *filePath;
 @property (strong, nonatomic) NSArray *arr;
-
+@property (strong, nonatomic) NSArray *resultDic;
 @end
 
 @implementation MenuVC
@@ -23,7 +24,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if(self.menuType==1){
+    if(self.menuType==0){
+        self.navigationItem.title = @"内财的菜单";
+    }else if(self.menuType==1){
         self.navigationItem.title = @"喜欢的菜单";
         UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCai)];
         self.navigationItem.rightBarButtonItem = rightButton;
@@ -35,7 +38,10 @@
 
 - (void) viewWillAppear:(BOOL)animated{
     
-    if(self.menuType==1){
+    if(self.menuType==0){
+        //http网络请求
+        [self askForSchhol];
+    }else if(self.menuType==1){
         //plist文件解档
         self.path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
         self.filePath = [self.path stringByAppendingPathComponent:@"PersonLove.plist"];
@@ -63,7 +69,11 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.arr count];
+    if(self.menuType==0){
+        return [self.resultDic count];
+    }else{
+        return [self.arr count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -74,7 +84,12 @@
     if(cell == nil) {
         cell =[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    if(self.menuType==1){
+    
+    if(self.menuType==0){
+        //校园菜单菜品排列
+        cell.imageView.image = [UIImage imageNamed:@"透明E"];
+        cell.textLabel.text = [self.resultDic[indexPath.row] objectForKey:@"dishname"];
+    }else if(self.menuType==1){
         //喜欢的菜单菜品排列
         cell.imageView.image = [UIImage imageNamed:@"透明E"];
         cell.textLabel.text = [self.arr[indexPath.row] objectForKey:@"cainame"];
@@ -100,6 +115,29 @@
     self.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:addCai animated:YES];
     self.hidesBottomBarWhenPushed=NO;
+}
+
+//校园菜单网络请求
+- (void) askForSchhol{
+    NSString* url = @"http://123.57.64.99/poolman/app/menu/getSystemMenuList";
+    //创建一个可变字典
+    NSMutableDictionary *parametersDic = [NSMutableDictionary dictionary];
+    //往字典里面添加需要提交的参数
+    [parametersDic setObject:@"0" forKey:@"pageNo"];
+    [parametersDic setObject:@"4" forKey:@"pageSize"];
+    
+    [[HttpTool HttpManager] GET:url parameters:parametersDic progress:nil success:^(NSURLSessionTask *operation, id responseObject) {
+        //json解析
+        NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+        NSLog(@"---获取到的json格式的字典--%@",resultDic);
+        
+        self.resultDic = resultDic[@"data"][@"Find"];
+        NSLog(@"200");
+        NSLog(@"%@",[self.resultDic[0] objectForKey:@"dishname"]);
+        
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        
+    }];
 }
 /*
 // Override to support conditional editing of the table view.
