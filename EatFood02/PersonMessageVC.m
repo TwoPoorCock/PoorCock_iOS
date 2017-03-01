@@ -47,28 +47,39 @@
 }
 
 - (IBAction)saveAll:(id)sender {
-//    [[HttpTool HttpManager] GET:nil parameters:parametersDic progress:nil success:^(NSURLSessionTask *operation, id responseObject) {
-//        //json解析
-//        NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
-//        NSLog(@"---获取到的json格式的字典--%@",resultDic);
-//        
-//        if([resultDic[@"msg"] isEqualToString:@"操作成功"]){
-//            User* app_user = [User getAppUser];
-//            app_user.user_name = resultDic[@"data"][@"UserNotice"][@"userName"];
-//            app_user.Letmeseesee = @"yes";
-//            [MBProgressHUD showToastToView:self.view withText:@"登录成功"];
-//            //获取主界面
-//            UIStoryboard *MainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//            ViewController* viewcontroller = [MainStoryBoard instantiateViewControllerWithIdentifier:@"viewcontroller"];
-//            //模态界面推出
-//            [self.navigationController presentViewController:viewcontroller animated:YES completion:nil];
-//        }else{
-//            [MBProgressHUD showToastToView:self.view withText:@"不是这个名字哦"];
-//        }
-//        
-//    } failure:^(NSURLSessionTask *operation, NSError *error) {
-//        
-//    }];
+    NSString* url = @"http://123.57.64.99/poolman/app/information/editPersonalInfo";
+    //创建一个可变字典
+    NSMutableDictionary *parametersDic = [NSMutableDictionary dictionary];
+    //往字典里面添加需要提交的参数
+    User* app_user = [User getAppUser];
+    [parametersDic setObject:app_user.userId forKey:@"userId"];
+    [parametersDic setObject:self.per_name.text forKey:@"userName"];
+    [parametersDic setObject:self.per_height.text forKey:@"height"];
+    [parametersDic setObject:self.per_weight.text forKey:@"weight"];
+    [parametersDic setObject:@"男" forKey:@"gender"];
+    [parametersDic setObject:@"15647110282" forKey:@"phone"];
+    
+    [parametersDic setObject:[NSString stringWithFormat:@"%d",self.per_weitong.on] forKey:@"weiteng"];
+    [parametersDic setObject:[NSString stringWithFormat:@"%d",self.per_mouth.on] forKey:@"kouqiangky"];
+    [parametersDic setObject:[NSString stringWithFormat:@"%d",self.per_tooth.on] forKey:@"yayincx"];
+    [parametersDic setObject:[NSString stringWithFormat:@"%d",self.per_fat.on] forKey:@"jianfei"];
+    
+    [[HttpTool HttpManager] GET:url parameters:parametersDic progress:nil success:^(NSURLSessionTask *operation, id responseObject) {
+        //json解析
+        NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+        NSLog(@"---获取到的json格式的字典--%@",resultDic);
+        
+        if([resultDic[@"msg"] isEqualToString:@"操作成功"]){
+            [self.navigationController popViewControllerAnimated:YES];
+            NSLog(@"保存成功");
+            //        [MBProgressHUD showToastToView:self.view withText:@"不是这个名字哦"];
+        }else{
+            NSLog(@"保存失败");
+        }
+        
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        NSLog(@"请求失败");
+    }];
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

@@ -11,6 +11,7 @@
 @interface User : NSObject
 
 @property NSString* user_name;
+@property NSString* userId;
 @property NSString* Letmeseesee;
 
 + (User*) getAppUser;

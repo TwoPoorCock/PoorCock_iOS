@@ -64,6 +64,7 @@
         if([resultDic[@"msg"] isEqualToString:@"操作成功"]){
             User* app_user = [User getAppUser];
             app_user.user_name = resultDic[@"data"][@"UserNotice"][@"userName"];
+            app_user.userId = resultDic[@"data"][@"UserNotice"][@"id"];
             app_user.Letmeseesee = @"yes";
             [MBProgressHUD showToastToView:self.view withText:@"登录成功"];
             //获取主界面
