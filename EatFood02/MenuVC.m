@@ -132,8 +132,8 @@
         NSLog(@"---获取到的json格式的字典--%@",resultDic);
         
         self.resultDic = resultDic[@"data"][@"Find"];
-        NSLog(@"200");
-        NSLog(@"%@",[self.resultDic[0] objectForKey:@"dishname"]);
+        
+        [self.tableView reloadData];
         
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         
