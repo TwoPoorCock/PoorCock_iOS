@@ -38,12 +38,28 @@
     [super viewDidLoad];
     self.navigationItem.title = @"小鳄口味";
     
-    User* app_user = [User getAppUser];
-    self.per_name.text=app_user.user_name;
-    
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStyleDone target:self action:@selector(saveAll:)];
     
     self.navigationItem.rightBarButtonItem = rightButton;
+    
+    [self setUserMessages];
+}
+
+- (void) setUserMessages
+{
+    User* app_user = [User getAppUser];
+    
+    self.per_name.text=app_user.user_name;
+    [self.per_height setText:[NSString stringWithFormat:@"%@",app_user.user_height]];
+    [self.per_weight setText:[NSString stringWithFormat:@"%@",app_user.user_weight]];
+    [self.love_hot setOn:app_user.user_hot];
+    [self.love_meat setOn:app_user.user_meat];
+
+    self.love_mainfood.text =app_user.user_mainfood;
+    [self.per_weitong setOn:app_user.user_weitong];
+    [self.per_mouth setOn:app_user.user_mouth];
+    [self.per_tooth setOn:app_user.user_tooth];
+    [self.per_fat setOn:app_user.user_fat];
 }
 
 - (IBAction)saveAll:(id)sender {
@@ -56,6 +72,9 @@
     [parametersDic setObject:self.per_name.text forKey:@"userName"];
     [parametersDic setObject:self.per_height.text forKey:@"height"];
     [parametersDic setObject:self.per_weight.text forKey:@"weight"];
+    [parametersDic setObject:self.love_mainfood.text forKey:@"mainfood"];
+    [parametersDic setObject:[NSString stringWithFormat:@"%d",self.love_meat.on] forKey:@"meat"];
+    [parametersDic setObject:[NSString stringWithFormat:@"%d",self.love_hot.on] forKey:@"hot"];
     [parametersDic setObject:@"男" forKey:@"gender"];
     [parametersDic setObject:@"15647110282" forKey:@"phone"];
     
@@ -63,7 +82,7 @@
     [parametersDic setObject:[NSString stringWithFormat:@"%d",self.per_mouth.on] forKey:@"kouqiangky"];
     [parametersDic setObject:[NSString stringWithFormat:@"%d",self.per_tooth.on] forKey:@"yayincx"];
     [parametersDic setObject:[NSString stringWithFormat:@"%d",self.per_fat.on] forKey:@"jianfei"];
-    
+    [self getUserMessages:parametersDic];
     [[HttpTool HttpManager] GET:url parameters:parametersDic progress:nil success:^(NSURLSessionTask *operation, id responseObject) {
         //json解析
         NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
@@ -83,7 +102,23 @@
         NSLog(@"请求失败");
     }];
 }
-
+- (void)getUserMessages:(NSDictionary*) resultDic
+{
+    User* app_user = [User getAppUser];
+    app_user.user_name = resultDic[@"userName"];
+    app_user.userId = resultDic[@"userId"];
+    app_user.user_meat = [resultDic[@"meat"] intValue];
+    app_user.user_hot = [resultDic[@"hot"] intValue];
+    app_user.user_height = resultDic[@"height"];
+    app_user.user_weight = resultDic[@"weight"];
+    app_user.user_mainfood = @"全都爱";
+    app_user.user_weitong = [resultDic[@"weiteng"] intValue];
+    app_user.user_mouth = [resultDic[@"kouqiangky"] intValue];
+    app_user.user_tooth = [resultDic[@"yayincx"] intValue];
+    app_user.user_fat = [resultDic[@"jianfei"] intValue];
+    app_user.Letmeseesee = @"yes";
+    
+}
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.row==0){
         [self AlearChangeName];

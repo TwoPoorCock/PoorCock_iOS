@@ -62,10 +62,7 @@
         NSLog(@"---获取到的json格式的字典--%@",resultDic);
         
         if([resultDic[@"msg"] isEqualToString:@"操作成功"]){
-            User* app_user = [User getAppUser];
-            app_user.user_name = resultDic[@"data"][@"UserNotice"][@"userName"];
-            app_user.userId = resultDic[@"data"][@"UserNotice"][@"id"];
-            app_user.Letmeseesee = @"yes";
+            [self getUserMessages:resultDic];
             [MBProgressHUD showToastToView:self.view withText:@"登录成功"];
             //获取主界面
             UIStoryboard *MainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -82,6 +79,23 @@
     
 }
 
+- (void)getUserMessages:(NSDictionary*) resultDic
+{
+    User* app_user = [User getAppUser];
+    app_user.user_name = resultDic[@"data"][@"UserNotice"][@"userName"];
+    app_user.userId = resultDic[@"data"][@"UserNotice"][@"id"];
+    app_user.user_meat = 0;
+    app_user.user_hot = 0;
+    app_user.user_height = resultDic[@"data"][@"UserNotice"][@"height"];
+    app_user.user_weight = resultDic[@"data"][@"UserNotice"][@"weight"];
+    app_user.user_mainfood = @"全都爱";
+    app_user.user_weitong = [resultDic[@"data"][@"UserNotice"][@"weiteng"] intValue];
+    app_user.user_mouth = [resultDic[@"data"][@"UserNotice"][@"kouqiangky"] intValue];
+    app_user.user_tooth = [resultDic[@"data"][@"UserNotice"][@"yayingcx"] intValue];
+    app_user.user_fat = [resultDic[@"data"][@"UserNotice"][@"jianfei"] intValue];
+    app_user.Letmeseesee = @"yes";
+
+}
 //实现textField代理方法，textField键盘弹出高度自适应
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
