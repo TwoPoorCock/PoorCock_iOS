@@ -47,6 +47,7 @@
 		4106241D1DED6701008B59E4 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		4106241F1DED6747008B59E4 /* RegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterVC.h; sourceTree = "<group>"; };
 		410624201DED6747008B59E4 /* RegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterVC.m; sourceTree = "<group>"; };
+		41195AA71E73A14B009C43A6 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		412F50831E18FD8600FC8497 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		412F50841E18FD8600FC8497 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		413299661DEC5A02003FFB65 /* LaunchScreenView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreenView.xib; sourceTree = "<group>"; };
@@ -134,6 +135,7 @@
 				415CA6731DF159D200E8B7F9 /* HttpTool.m */,
 				419CEDAB1E26145300E2CD57 /* MBProgressHUD+Toast.h */,
 				419CEDAC1E26145300E2CD57 /* MBProgressHUD+Toast.m */,
+				41195AA71E73A14B009C43A6 /* PrefixHeader.pch */,
 			);
 			name = EatTool;
 			sourceTree = "<group>";

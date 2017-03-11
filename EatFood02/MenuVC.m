@@ -10,6 +10,7 @@
 #import "MenuAddCaiVC.h"
 #import "MJRefresh.h"
 #import "HttpTool.h"
+#import "PrefixHeader.pch"
 
 @interface MenuVC ()
 
@@ -119,7 +120,7 @@
 
 //校园菜单网络请求
 - (void) askForSchhol{
-    NSString* url = @"http://123.57.64.99/poolman/app/menu/getSystemMenuList";
+    NSString* url = [NSString stringWithFormat:@"%@%@", SERVER_PATH, @"poolman/app/menu/getSystemMenuList"];
     //创建一个可变字典
     NSMutableDictionary *parametersDic = [NSMutableDictionary dictionary];
     //往字典里面添加需要提交的参数
@@ -139,25 +140,23 @@
         
     }];
 }
-/*
-// Override to support conditional editing of the table view.
+
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
-// Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        // 添加一个删除按钮
+        UITableViewRowAction *deleteRowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"删除用户"handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+//            [self.arr removeObjectAtIndex:indexPath.row];
+//            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        }];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.

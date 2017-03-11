@@ -11,6 +11,8 @@
 #import "JTNumberScrollAnimatedView.h"
 #import "User.h"
 #import "pickViewController.h"
+#import "HttpTool.h"
+#import "PrefixHeader.pch"
 
 @interface EatFoodVC () <UIAlertViewDelegate,pickViewDelegate>
 @property (weak, nonatomic) IBOutlet JTNumberScrollAnimatedView *animotionView;
@@ -97,7 +99,10 @@
     //字符串拼接较好办法
     self.menuName.text=[@"当前菜单：" stringByAppendingString:text];
     
-    if([self.menuName.text isEqualToString:@"当前菜单：小鳄喜欢的菜单"]){
+    if([self.menuName.text isEqualToString:@"当前菜单：内蒙古财经大学食堂菜单"]){
+        //http网络请求
+        [self askForSchhol];
+    }else if([self.menuName.text isEqualToString:@"当前菜单：小鳄喜欢的菜单"]){
         //plist文件解档
         self.path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
         self.filePath = [self.path stringByAppendingPathComponent:@"PersonLove.plist"];
@@ -108,6 +113,26 @@
         self.filePath = [self.path stringByAppendingPathComponent:@"HistoryMenu.plist"];
         self.arr = [NSArray arrayWithContentsOfFile:self.filePath];
     }
+}
+//校园菜单网络请求
+- (void) askForSchhol{
+    NSString* url = [NSString stringWithFormat:@"%@%@", SERVER_PATH, @"poolman/app/menu/getSystemMenuList"];
+    //创建一个可变字典
+    NSMutableDictionary *parametersDic = [NSMutableDictionary dictionary];
+    //往字典里面添加需要提交的参数
+    [parametersDic setObject:@"0" forKey:@"pageNo"];
+    [parametersDic setObject:@"4" forKey:@"pageSize"];
+    
+    [[HttpTool HttpManager] GET:url parameters:parametersDic progress:nil success:^(NSURLSessionTask *operation, id responseObject) {
+        //json解析
+        NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+        NSLog(@"---获取到的json格式的字典--%@",resultDic);
+        
+        self.arr = resultDic[@"data"][@"Find"];
+        
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        
+    }];
 }
 - (void) confirmCai{
     

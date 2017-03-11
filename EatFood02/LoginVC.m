@@ -12,6 +12,7 @@
 #import "User.h"
 #import "MBProgressHUD.h"
 #import "MBProgressHUD+Toast.h"
+#import "PrefixHeader.pch"
 
 @interface LoginVC ()
 @property (weak, nonatomic) IBOutlet UIButton *loginBut;
@@ -49,7 +50,7 @@
         return ;
     }
     
-    NSString* url = @"http://123.57.64.99/poolman/app/login";
+    NSString* url = [NSString stringWithFormat:@"%@%@", SERVER_PATH, @"poolman/app/login"];
     //创建一个可变字典
     NSMutableDictionary *parametersDic = [NSMutableDictionary dictionary];
     //往字典里面添加需要提交的参数

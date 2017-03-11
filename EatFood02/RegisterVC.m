@@ -10,6 +10,7 @@
 #import "HttpTool.h"
 #import "UIImageView+WebCache.h"
 #import "MBProgressHUD+Toast.h"
+#import "PrefixHeader.pch"
 
 @interface RegisterVC ()
 @property (weak, nonatomic) IBOutlet UITextField *register_name;
@@ -28,7 +29,7 @@
 }
 
 - (IBAction)register:(id)sender {
-    NSString* url = @"http://123.57.64.99/poolman/app/register";
+    NSString* url = [NSString stringWithFormat:@"%@%@", SERVER_PATH, @"poolman/app/register"];
     //创建一个可变字典
     NSMutableDictionary *parametersDic = [NSMutableDictionary dictionary];
     //往字典里面添加需要提交的参数

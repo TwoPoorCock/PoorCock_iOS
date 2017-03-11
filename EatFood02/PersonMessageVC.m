@@ -9,6 +9,7 @@
 #import "PersonMessageVC.h"
 #import "User.h"
 #import "HttpTool.h"
+#import "PrefixHeader.pch"
 
 @interface PersonMessageVC () <UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *per_name;
@@ -63,7 +64,7 @@
 }
 
 - (IBAction)saveAll:(id)sender {
-    NSString* url = @"http://123.57.64.99/poolman/app/information/editPersonalInfo";
+    NSString* url = [NSString stringWithFormat:@"%@%@", SERVER_PATH, @"poolman/app/information/editPersonalInfo"];
     //创建一个可变字典
     NSMutableDictionary *parametersDic = [NSMutableDictionary dictionary];
     //往字典里面添加需要提交的参数
