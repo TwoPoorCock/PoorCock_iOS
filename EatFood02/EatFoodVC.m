@@ -24,6 +24,7 @@
 @property (strong, nonatomic) NSArray *arr;
 //被选中的菜品
 @property (strong, nonatomic) NSDictionary *beSelectDic;
+@property (weak, nonatomic) IBOutlet UIButton *selectButton;
 @end
 
 @implementation EatFoodVC
@@ -68,18 +69,21 @@
     self.hidesBottomBarWhenPushed=NO;
 }
 - (IBAction)select_cai:(id)sender {
+    //选菜按钮不可连续点击
+    self.selectButton.enabled = NO;
     if([_arr count]==0){
     }
     else{
         int value = (arc4random() % [_arr count]);
         self.beSelectDic = self.arr[value];
-        [self.animotionView setValue:[self.arr[value] objectForKey:@"cainame"]];
+        [self.animotionView setValue:[self.arr[value] objectForKey:@"dishname"]];
         [self.animotionView startAnimation];
-    }
-    User* app_user = [User getAppUser];
-    if([app_user.Letmeseesee isEqualToString:@"yes"]){
-        //开始动画后1.5秒弹出确认框
-        [self performSelector:@selector(confirmCai) withObject:nil afterDelay:1.5f];
+        
+        User* app_user = [User getAppUser];
+        if([app_user.Letmeseesee isEqualToString:@"yes"]){
+            //开始动画后1.5秒弹出确认框
+            [self performSelector:@selector(confirmCai) withObject:nil afterDelay:1.5f];
+        }
     }
 }
 
@@ -131,7 +135,7 @@
         self.arr = resultDic[@"data"][@"Find"];
         
     } failure:^(NSURLSessionTask *operation, NSError *error) {
-        
+        NSLog(@"1234567890-=");
     }];
 }
 - (void) confirmCai{
@@ -157,9 +161,9 @@
             NSMutableArray *myhistoryMutableArray = [historyarr mutableCopy];
             //把被选中的菜的详细信息导入历史菜单中
             NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
-                                 [self.beSelectDic objectForKey:@"cainame"], @"cainame",
-                                 [self.beSelectDic objectForKey:@"caihot"], @"caihot",
-                                 [self.beSelectDic objectForKey:@"caimeat"], @"caimeat",
+                                 [self.beSelectDic objectForKey:@"dishname"], @"dishname",
+                                 [self.beSelectDic objectForKey:@"flagH"], @"flagH",
+                                 [self.beSelectDic objectForKey:@"flagR"], @"flagR",
                                  [NSString stringWithFormat: @"time"], @"eattime",
                                  nil];
             [myhistoryMutableArray addObject:dic];
@@ -171,5 +175,7 @@
 
         }
     }
+    //选菜按钮可以再次点击
+    self.selectButton.enabled = YES;
 }
 @end

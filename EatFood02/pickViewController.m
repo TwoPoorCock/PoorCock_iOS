@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _arry = [[NSMutableArray alloc] initWithObjects:@"内蒙古财经大学食堂菜单",@"小鳄喜欢的菜单",@"历史菜单", nil];
+    self.chooseText = @"内蒙古财经大学食堂菜单";
 //    self.view.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
     
 }
@@ -31,6 +32,7 @@
 }
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     _chooseText = [NSString stringWithFormat:@"%@",[_arry objectAtIndex:row]];
+    
 }
 
 //取消按钮

@@ -43,9 +43,9 @@
     NSMutableArray *myMutableArray = [arr mutableCopy];
     
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
-                          _caiName.text, @"cainame",
-                          [NSString stringWithFormat: @"%d", _caiHot.selectedSegmentIndex], @"caihot",
-                          [NSString stringWithFormat: @"%d", _caiMeat.selectedSegmentIndex], @"caimeat",
+                          _caiName.text, @"dishname",
+                          [NSString stringWithFormat: @"%d", _caiHot.selectedSegmentIndex], @"flagH",
+                          [NSString stringWithFormat: @"%d", _caiMeat.selectedSegmentIndex], @"flagR",
                           nil];
     [myMutableArray addObject:dic];
     NSLog(@"%@", myMutableArray);

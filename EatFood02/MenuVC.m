@@ -54,7 +54,6 @@
         self.arr = [NSArray arrayWithContentsOfFile:self.filePath];
     }
     
-    
     [self.tableView reloadData];
 }
 
@@ -93,11 +92,11 @@
     }else if(self.menuType==1){
         //喜欢的菜单菜品排列
         cell.imageView.image = [UIImage imageNamed:@"透明E"];
-        cell.textLabel.text = [self.arr[indexPath.row] objectForKey:@"cainame"];
+        cell.textLabel.text = [self.arr[indexPath.row] objectForKey:@"dishname"];
     }else if(self.menuType==2){
         //历史的菜单菜品倒叙排列
         cell.imageView.image = [UIImage imageNamed:@"透明E"];
-        cell.textLabel.text = [self.arr[[self.arr count]-indexPath.row-1] objectForKey:@"cainame"];
+        cell.textLabel.text = [self.arr[[self.arr count]-indexPath.row-1] objectForKey:@"dishname"];
     }
     
     return cell;
@@ -141,22 +140,41 @@
     }];
 }
 
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.tableView.editing)
+    {
+        //当表视图处于没有未编辑状态时选择多选删除
+        return UITableViewCellEditingStyleDelete| UITableViewCellEditingStyleInsert;
+    }
+    else
+    {
+        //当表视图处于没有未编辑状态时选择左滑删除
+        return UITableViewCellEditingStyleDelete;
+    }
+    
+}
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
-
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // 添加一个删除按钮
-        UITableViewRowAction *deleteRowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"删除用户"handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-//            [self.arr removeObjectAtIndex:indexPath.row];
-//            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        }];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+    //如果是删除
+    if(editingStyle==UITableViewCellEditingStyleDelete)
+    {
+        NSMutableArray*subArray=self.arr[indexPath.section];
+        [subArray removeObjectAtIndex:indexPath.row];
+        
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [tableView reloadData];
+    }else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"删除";
+}
 
 /*
 // Override to support rearranging the table view.
