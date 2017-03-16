@@ -17,7 +17,7 @@
 @property (strong, nonatomic) NSString *path;
 @property (strong, nonatomic) NSString *filePath;
 @property (strong, nonatomic) NSMutableArray *arr;
-@property (strong, nonatomic) NSArray *resultDic;
+@property (strong, nonatomic) NSMutableArray *resultDic;
 @end
 
 @implementation MenuVC
@@ -123,8 +123,8 @@
     //创建一个可变字典
     NSMutableDictionary *parametersDic = [NSMutableDictionary dictionary];
     //往字典里面添加需要提交的参数
-    [parametersDic setObject:@"0" forKey:@"pageNo"];
-    [parametersDic setObject:@"4" forKey:@"pageSize"];
+    [parametersDic setObject:@"1" forKey:@"pageNo"];
+    [parametersDic setObject:@"15" forKey:@"pageSize"];
     
     [[HttpTool HttpManager] GET:url parameters:parametersDic progress:nil success:^(NSURLSessionTask *operation, id responseObject) {
         //json解析
@@ -142,8 +142,8 @@
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //当表视图处于没有未编辑状态时选择左滑删除
-    return UITableViewCellEditingStyleDelete;
+        //当表视图处于没有未编辑状态时选择左滑删除
+        return UITableViewCellEditingStyleDelete;
     
 }
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -153,25 +153,55 @@
     //如果是删除
     if(editingStyle==UITableViewCellEditingStyleDelete)
     {
-        [self.arr removeObjectAtIndex: indexPath.row];
-
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
-                         withRowAnimation:UITableViewRowAnimationFade];
-        [tableView reloadData];
-        //plist文件解档
-        NSString *path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
-        NSString *filePath = [path stringByAppendingPathComponent:@"PersonLove.plist"];
-        //plist文件归档
-        [self.arr writeToFile:filePath atomically:YES];
+        //校园菜单把菜添加到我喜欢的菜单
+        if(self.menuType==0){
+            //plist文件解档
+            NSString *path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+            NSString *filePath = [path stringByAppendingPathComponent:@"PersonLove.plist"];
+            NSArray *arr = [NSArray arrayWithContentsOfFile:filePath];
+            if(arr==nil){
+                arr = [[NSArray alloc] init];
+            }
+            NSMutableArray *myMutableArray = [arr mutableCopy];
+            
+            NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 [self.resultDic[indexPath.row] objectForKey:@"dishname"], @"dishname",
+                                 [self.resultDic[indexPath.row] objectForKey:@"flagH"], @"flagH",
+                                 [self.resultDic[indexPath.row] objectForKey:@"flagR"], @"flagR",
+                                 nil];
+            [myMutableArray addObject:dic];
+            NSLog(@"%@", myMutableArray);
+            NSArray *myArray = [myMutableArray copy];
+            
+            //plist文件归档
+            [myArray writeToFile:filePath atomically:YES];
+            
+            [self.tableView reloadData];
+        }else{//个人菜单把菜删除
+            [self.arr removeObjectAtIndex: indexPath.row];
+            
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+            [tableView reloadData];
+            //plist文件解档
+            NSString *path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+            NSString *filePath = [path stringByAppendingPathComponent:@"PersonLove.plist"];
+            //plist文件归档
+            [self.arr writeToFile:filePath atomically:YES];
+        }
     }else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if(self.menuType==0){
+    return @"喜欢它";
+    }else{
     return @"删除";
+    }
 }
-
+//- (NSString *)tableView:(UITableView *)tableView t
 /*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {

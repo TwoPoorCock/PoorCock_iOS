@@ -139,8 +139,8 @@
     //创建一个可变字典
     NSMutableDictionary *parametersDic = [NSMutableDictionary dictionary];
     //往字典里面添加需要提交的参数
-    [parametersDic setObject:@"0" forKey:@"pageNo"];
-    [parametersDic setObject:@"4" forKey:@"pageSize"];
+    [parametersDic setObject:@"1" forKey:@"pageNo"];
+    [parametersDic setObject:@"15" forKey:@"pageSize"];
     
     [[HttpTool HttpManager] GET:url parameters:parametersDic progress:nil success:^(NSURLSessionTask *operation, id responseObject) {
         //json解析
