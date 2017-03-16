@@ -16,7 +16,7 @@
 
 @property (strong, nonatomic) NSString *path;
 @property (strong, nonatomic) NSString *filePath;
-@property (strong, nonatomic) NSArray *arr;
+@property (strong, nonatomic) NSMutableArray *arr;
 @property (strong, nonatomic) NSArray *resultDic;
 @end
 
@@ -38,7 +38,7 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated{
-    
+
     if(self.menuType==0){
         //http网络请求
         [self askForSchhol];
@@ -46,12 +46,12 @@
         //plist文件解档
         self.path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
         self.filePath = [self.path stringByAppendingPathComponent:@"PersonLove.plist"];
-        self.arr = [NSArray arrayWithContentsOfFile:self.filePath];
+        self.arr = [NSMutableArray arrayWithContentsOfFile:self.filePath];
     }else if(self.menuType==2){
         //plist文件解档
         self.path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
         self.filePath = [self.path stringByAppendingPathComponent:@"HistoryMenu.plist"];
-        self.arr = [NSArray arrayWithContentsOfFile:self.filePath];
+        self.arr = [NSMutableArray arrayWithContentsOfFile:self.filePath];
     }
     
     [self.tableView reloadData];
@@ -142,16 +142,8 @@
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.tableView.editing)
-    {
-        //当表视图处于没有未编辑状态时选择多选删除
-        return UITableViewCellEditingStyleDelete| UITableViewCellEditingStyleInsert;
-    }
-    else
-    {
-        //当表视图处于没有未编辑状态时选择左滑删除
-        return UITableViewCellEditingStyleDelete;
-    }
+    //当表视图处于没有未编辑状态时选择左滑删除
+    return UITableViewCellEditingStyleDelete;
     
 }
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -161,12 +153,16 @@
     //如果是删除
     if(editingStyle==UITableViewCellEditingStyleDelete)
     {
-        NSMutableArray*subArray=self.arr[indexPath.section];
-        [subArray removeObjectAtIndex:indexPath.row];
-        
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        
+        [self.arr removeObjectAtIndex: indexPath.row];
+
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                         withRowAnimation:UITableViewRowAnimationFade];
         [tableView reloadData];
+        //plist文件解档
+        NSString *path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+        NSString *filePath = [path stringByAppendingPathComponent:@"PersonLove.plist"];
+        //plist文件归档
+        [self.arr writeToFile:filePath atomically:YES];
     }else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
