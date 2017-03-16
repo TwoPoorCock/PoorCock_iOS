@@ -13,6 +13,7 @@
 #import "pickViewController.h"
 #import "HttpTool.h"
 #import "PrefixHeader.pch"
+#import "EatHealthy.h"
 
 @interface EatFoodVC () <UIAlertViewDelegate,pickViewDelegate>
 @property (weak, nonatomic) IBOutlet JTNumberScrollAnimatedView *animotionView;
@@ -72,11 +73,25 @@
     //选菜按钮不可连续点击
     self.selectButton.enabled = NO;
     if([_arr count]==0){
+        [self.animotionView setValue:@"菜单为空"];
+        //选菜按钮可以再次点击
+        self.selectButton.enabled = YES;
     }
     else{
-        int value = (arc4random() % [_arr count]);
-        self.beSelectDic = self.arr[value];
-        [self.animotionView setValue:[self.arr[value] objectForKey:@"dishname"]];
+        
+        NSArray *eatHealthyFoodArray = [EatHealthy getHealthyFoodArray:_arr];
+        if([eatHealthyFoodArray count]==0||eatHealthyFoodArray==nil){
+            int value = (arc4random() % [_arr count]);
+            self.beSelectDic = self.arr[value];
+            [self.animotionView setValue:[self.arr[value] objectForKey:@"dishname"]];
+//            NSLog(@"菜单没有健康菜");
+        }else{
+            int value = (arc4random() % [eatHealthyFoodArray count]);
+            self.beSelectDic = eatHealthyFoodArray[value];
+            [self.animotionView setValue:[eatHealthyFoodArray[value] objectForKey:@"dishname"]];
+//            NSLog(@"菜单有健康菜");
+        }
+        
         [self.animotionView startAnimation];
         
         User* app_user = [User getAppUser];

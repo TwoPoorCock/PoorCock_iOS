@@ -10,6 +10,7 @@
 		4106241B1DED5526008B59E4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4106241A1DED5526008B59E4 /* Login.storyboard */; };
 		4106241E1DED6701008B59E4 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4106241D1DED6701008B59E4 /* LoginVC.m */; };
 		410624211DED6747008B59E4 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 410624201DED6747008B59E4 /* RegisterVC.m */; };
+		412455DF1E791287002FB133 /* EatHealthy.m in Sources */ = {isa = PBXBuildFile; fileRef = 412455DE1E791287002FB133 /* EatHealthy.m */; };
 		412F50851E18FD8600FC8497 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 412F50841E18FD8600FC8497 /* User.m */; };
 		413299671DEC5A02003FFB65 /* LaunchScreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 413299661DEC5A02003FFB65 /* LaunchScreenView.xib */; };
 		4132996D1DEC6654003FFB65 /* PersonMessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4132996C1DEC6654003FFB65 /* PersonMessageVC.m */; };
@@ -48,6 +49,8 @@
 		4106241F1DED6747008B59E4 /* RegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterVC.h; sourceTree = "<group>"; };
 		410624201DED6747008B59E4 /* RegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterVC.m; sourceTree = "<group>"; };
 		41195AA71E73A14B009C43A6 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		412455DD1E791287002FB133 /* EatHealthy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EatHealthy.h; path = EatFood02/EatHealthy.h; sourceTree = "<group>"; };
+		412455DE1E791287002FB133 /* EatHealthy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EatHealthy.m; path = EatFood02/EatHealthy.m; sourceTree = "<group>"; };
 		412F50831E18FD8600FC8497 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		412F50841E18FD8600FC8497 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		413299661DEC5A02003FFB65 /* LaunchScreenView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreenView.xib; sourceTree = "<group>"; };
@@ -230,6 +233,8 @@
 				4132996C1DEC6654003FFB65 /* PersonMessageVC.m */,
 				413299681DEC65BD003FFB65 /* EatFoodVC.h */,
 				4132996E1DEC6664003FFB65 /* EatFoodVC.m */,
+				412455DD1E791287002FB133 /* EatHealthy.h */,
+				412455DE1E791287002FB133 /* EatHealthy.m */,
 			);
 			name = EatFood;
 			path = ..;
@@ -414,6 +419,7 @@
 				41560B421E154B4C005C503F /* MenuVC.m in Sources */,
 				41E9F18E1DEAEF1D0003C5CB /* JTNumberScrollAnimatedView.m in Sources */,
 				4182B3D31E1B67EE00E0579E /* EatNewsCell.m in Sources */,
+				412455DF1E791287002FB133 /* EatHealthy.m in Sources */,
 				41D7378D1E27646600C97AD7 /* HealthyVC.m in Sources */,
 				4182B3D71E1B85D000E0579E /* NewsWebVC.m in Sources */,
 				41AD981C1DE7176B00781975 /* EatMenuVC.m in Sources */,
