@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hhg-ms-oBX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hhg-ms-oBX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -67,13 +67,7 @@
                             <constraint firstItem="ame-Qy-hAS" firstAttribute="centerY" secondItem="nze-sy-lqu" secondAttribute="centerY" id="rkw-wZ-Ii8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="thZ-hV-hev">
-                        <barButtonItem key="rightBarButtonItem" title="下一步" id="W9P-hn-tmt">
-                            <connections>
-                                <segue destination="gdm-e5-dQe" kind="push" identifier="healthyvc" id="EuM-tt-h4e"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="thZ-hV-hev"/>
                     <connections>
                         <outlet property="register_name" destination="BXR-xC-pye" id="icF-97-TD7"/>
                     </connections>

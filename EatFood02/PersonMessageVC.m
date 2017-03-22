@@ -121,7 +121,10 @@
     
 }
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(indexPath.row==0){
+    //tableview cell点击后不再是灰色
+    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    if(indexPath.section==0&&indexPath.row==0){
         [self AlearChangeName];
     }
 }

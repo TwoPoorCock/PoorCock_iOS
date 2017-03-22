@@ -290,8 +290,16 @@
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bvx-DS-Iou">
-                                                    <rect key="frame" x="157" y="287" width="62" height="30"/>
-                                                    <state key="normal" title="开始选菜"/>
+                                                    <rect key="frame" x="68" y="287" width="240" height="30"/>
+                                                    <color key="backgroundColor" red="1" green="0.73275762796401978" blue="0.23762792348861694" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="240" id="g09-gx-0YE"/>
+                                                        <constraint firstAttribute="height" constant="30" id="zod-2D-e4h"/>
+                                                    </constraints>
+                                                    <state key="normal" title="开始选菜">
+                                                        <color key="titleColor" red="0.5722077488899231" green="1" blue="0.38890942931175232" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleShadowColor" red="1" green="0.73275762796401978" blue="0.23762792348861694" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="select_cai:" destination="cIo-Uc-2g8" eventType="touchUpInside" id="sS1-eR-ycL"/>
                                                     </connections>

@@ -28,6 +28,10 @@
     self.navigationItem.title = @"小鳄吃饭";
     
     self.login_username.delegate = self;
+    
+    // 读取用户偏好设置
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.login_username.text = [defaults objectForKey:@"userName"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,6 +74,16 @@
             ViewController* viewcontroller = [MainStoryBoard instantiateViewControllerWithIdentifier:@"viewcontroller"];
             //模态界面推出
             [self.navigationController presentViewController:viewcontroller animated:YES completion:nil];
+            
+            // 获取用户偏好设置对象
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            // 保存用户偏好设置
+            [defaults setObject:self.login_username.text forKey:@"userName"];
+            [defaults setObject:self.login_username.text forKey:@"passWord"];
+            // 注意：UserDefaults设置数据时，不是立即写入，而是根据时间戳定时地把缓存中的数据写入本地磁盘。所以调用了set方法之后数据有可能还没有写入磁盘应用程序就终止了。
+            // 出现以上问题，可以通过调用synchornize方法强制写入
+            // 现在这个版本不用写也会马上写入 不过之前的版本不会
+//            [defaults synchronize];
         }else{
             [MBProgressHUD showToastToView:self.view withText:@"不是这个名字哦"];
         }

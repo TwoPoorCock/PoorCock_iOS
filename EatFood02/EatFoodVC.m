@@ -98,11 +98,17 @@
         if([app_user.Letmeseesee isEqualToString:@"yes"]){
             //开始动画后1.5秒弹出确认框
             [self performSelector:@selector(confirmCai) withObject:nil afterDelay:1.5f];
+        }else{
+            //选菜按钮可以再次点击
+            self.selectButton.enabled = YES;
         }
     }
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //tableview cell点击后不再是灰色
+    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
     if(indexPath.row==0){
         [self selectMenu];
     }
@@ -193,4 +199,5 @@
     //选菜按钮可以再次点击
     self.selectButton.enabled = YES;
 }
+
 @end
