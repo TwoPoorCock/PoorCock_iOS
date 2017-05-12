@@ -557,8 +557,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.poorcick.EatFood02;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2f2eee2d-4aa1-41f2-b2c4-0bf1eb93a5d5";
-				PROVISIONING_PROFILE_SPECIFIER = haoyuze_eatfood_development;
+				PROVISIONING_PROFILE = "cbf823c5-d8c7-46ca-a8eb-db299331448e";
+				PROVISIONING_PROFILE_SPECIFIER = haoyuze_eatfood_development2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -575,8 +575,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.poorcick.EatFood02;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2f2eee2d-4aa1-41f2-b2c4-0bf1eb93a5d5";
-				PROVISIONING_PROFILE_SPECIFIER = haoyuze_eatfood_development;
+				PROVISIONING_PROFILE = "cbf823c5-d8c7-46ca-a8eb-db299331448e";
+				PROVISIONING_PROFILE_SPECIFIER = haoyuze_eatfood_development2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
